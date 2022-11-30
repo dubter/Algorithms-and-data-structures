@@ -1,0 +1,1 @@
+add_executable(big_integer_public_test big_integer_public_test.cpp big_integer.cpp)

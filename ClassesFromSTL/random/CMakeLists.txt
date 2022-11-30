@@ -1,0 +1,1 @@
+add_executable(random_public_test random.cpp random_public_test.cpp)

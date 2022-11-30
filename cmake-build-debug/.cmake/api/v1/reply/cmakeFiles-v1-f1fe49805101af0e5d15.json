@@ -1,0 +1,220 @@
+{
+	"inputs" : 
+	[
+		{
+			"path" : "CMakeLists.txt"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "cmake-build-debug/CMakeFiles/3.23.2/CMakeSystem.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rodion/Downloads/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeSystemSpecificInitialize.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "cmake-build-debug/CMakeFiles/3.23.2/CMakeCCompiler.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "cmake-build-debug/CMakeFiles/3.23.2/CMakeCXXCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rodion/Downloads/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeSystemSpecificInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rodion/Downloads/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeGenericSystem.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rodion/Downloads/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeInitializeConfigs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rodion/Downloads/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rodion/Downloads/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Platform/UnixPaths.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rodion/Downloads/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rodion/Downloads/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeLanguageInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rodion/Downloads/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GNU-C.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rodion/Downloads/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GNU.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rodion/Downloads/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rodion/Downloads/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux-GNU-C.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rodion/Downloads/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux-GNU.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rodion/Downloads/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCommonLanguageInclude.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rodion/Downloads/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCXXInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rodion/Downloads/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeLanguageInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rodion/Downloads/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GNU-CXX.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rodion/Downloads/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GNU.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rodion/Downloads/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux-GNU-CXX.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rodion/Downloads/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux-GNU.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/rodion/Downloads/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCommonLanguageInclude.cmake"
+		},
+		{
+			"path" : "ClassesFromSTL/gcd/CMakeLists.txt"
+		},
+		{
+			"path" : "ClassesFromSTL/sum/CMakeLists.txt"
+		},
+		{
+			"path" : "ClassesFromSTL/any/CMakeLists.txt"
+		},
+		{
+			"path" : "ClassesFromSTL/array/CMakeLists.txt"
+		},
+		{
+			"path" : "ClassesFromSTL/big_integer/CMakeLists.txt"
+		},
+		{
+			"path" : "ClassesFromSTL/calculator/CMakeLists.txt"
+		},
+		{
+			"path" : "ClassesFromSTL/calculator/tokenize/CMakeLists.txt"
+		},
+		{
+			"path" : "ClassesFromSTL/calculator/polish_notation/CMakeLists.txt"
+		},
+		{
+			"path" : "ClassesFromSTL/calculator/calculator/CMakeLists.txt"
+		},
+		{
+			"path" : "ClassesFromSTL/frozen_set/CMakeLists.txt"
+		},
+		{
+			"path" : "ClassesFromSTL/inserter/CMakeLists.txt"
+		},
+		{
+			"path" : "ClassesFromSTL/itertools/CMakeLists.txt"
+		},
+		{
+			"path" : "ClassesFromSTL/itertools/enumerate/CMakeLists.txt"
+		},
+		{
+			"path" : "ClassesFromSTL/itertools/range/CMakeLists.txt"
+		},
+		{
+			"path" : "ClassesFromSTL/itertools/reversed/CMakeLists.txt"
+		},
+		{
+			"path" : "ClassesFromSTL/matrix/CMakeLists.txt"
+		},
+		{
+			"path" : "ClassesFromSTL/move_iterator/CMakeLists.txt"
+		},
+		{
+			"path" : "ClassesFromSTL/optional/CMakeLists.txt"
+		},
+		{
+			"path" : "ClassesFromSTL/random/CMakeLists.txt"
+		},
+		{
+			"path" : "ClassesFromSTL/rational/CMakeLists.txt"
+		},
+		{
+			"path" : "ClassesFromSTL/reverse_iterator/CMakeLists.txt"
+		},
+		{
+			"path" : "ClassesFromSTL/shared_ptr/CMakeLists.txt"
+		},
+		{
+			"path" : "ClassesFromSTL/string/CMakeLists.txt"
+		},
+		{
+			"path" : "ClassesFromSTL/string_view/CMakeLists.txt"
+		},
+		{
+			"path" : "ClassesFromSTL/unique_ptr/CMakeLists.txt"
+		},
+		{
+			"path" : "ClassesFromSTL/unordered_set/CMakeLists.txt"
+		},
+		{
+			"path" : "ClassesFromSTL/vector/CMakeLists.txt"
+		},
+		{
+			"path" : "ClassesFromSTL/geometry/CMakeLists.txt"
+		}
+	],
+	"kind" : "cmakeFiles",
+	"paths" : 
+	{
+		"build" : "/home/rodion/CLionProjects/algorithms_and_data_structures/cmake-build-debug",
+		"source" : "/home/rodion/CLionProjects/algorithms_and_data_structures"
+	},
+	"version" : 
+	{
+		"major" : 1,
+		"minor" : 0
+	}
+}

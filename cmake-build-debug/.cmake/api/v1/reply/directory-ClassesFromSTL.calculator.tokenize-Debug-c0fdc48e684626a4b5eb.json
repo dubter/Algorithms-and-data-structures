@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "ClassesFromSTL/calculator/tokenize",
+		"source" : "ClassesFromSTL/calculator/tokenize"
+	}
+}

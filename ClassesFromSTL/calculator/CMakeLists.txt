@@ -1,0 +1,3 @@
+add_subdirectory(tokenize)
+add_subdirectory(polish_notation)
+add_subdirectory(calculator)

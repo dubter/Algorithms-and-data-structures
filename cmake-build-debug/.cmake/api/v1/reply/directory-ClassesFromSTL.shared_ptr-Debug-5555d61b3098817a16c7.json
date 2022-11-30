@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "ClassesFromSTL/shared_ptr",
+		"source" : "ClassesFromSTL/shared_ptr"
+	}
+}

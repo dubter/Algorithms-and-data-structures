@@ -1,0 +1,1 @@
+add_executable(frozen_set_public_test frozen_set_public_test.cpp)

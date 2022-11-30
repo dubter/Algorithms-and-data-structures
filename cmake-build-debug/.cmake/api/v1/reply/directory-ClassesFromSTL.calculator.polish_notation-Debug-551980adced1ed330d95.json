@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "ClassesFromSTL/calculator/polish_notation",
+		"source" : "ClassesFromSTL/calculator/polish_notation"
+	}
+}

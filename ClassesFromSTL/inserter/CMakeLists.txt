@@ -1,0 +1,1 @@
+add_executable(inserter_public_test inserter_public_test.cpp)

@@ -1,0 +1,197 @@
+[
+{
+  "directory": "/home/rodion/Documents/cppmipt_spring2022/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/rodion/Documents/cppmipt_spring2022/.  -fsanitize=address,undefined -Wall -Wextra -pedantic -Werror -Wno-self-assign-overloaded -Wno-missing-braces -g -std=gnu++17 -o gcd/CMakeFiles/gcd_public_test.dir/gcd_public_test.cpp.o -c /home/rodion/Documents/cppmipt_spring2022/gcd/gcd_public_test.cpp",
+  "file": "/home/rodion/Documents/cppmipt_spring2022/gcd/gcd_public_test.cpp"
+},
+{
+  "directory": "/home/rodion/Documents/cppmipt_spring2022/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/rodion/Documents/cppmipt_spring2022/.  -fsanitize=address,undefined -Wall -Wextra -pedantic -Werror -Wno-self-assign-overloaded -Wno-missing-braces -g -std=gnu++17 -o sum/CMakeFiles/sum_public_test.dir/sum.cpp.o -c /home/rodion/Documents/cppmipt_spring2022/sum/sum.cpp",
+  "file": "/home/rodion/Documents/cppmipt_spring2022/sum/sum.cpp"
+},
+{
+  "directory": "/home/rodion/Documents/cppmipt_spring2022/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/rodion/Documents/cppmipt_spring2022/.  -fsanitize=address,undefined -Wall -Wextra -pedantic -Werror -Wno-self-assign-overloaded -Wno-missing-braces -g -std=gnu++17 -o sum/CMakeFiles/sum_public_test.dir/sum_public_test.cpp.o -c /home/rodion/Documents/cppmipt_spring2022/sum/sum_public_test.cpp",
+  "file": "/home/rodion/Documents/cppmipt_spring2022/sum/sum_public_test.cpp"
+},
+{
+  "directory": "/home/rodion/Documents/cppmipt_spring2022/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/rodion/Documents/cppmipt_spring2022/.  -fsanitize=address,undefined -Wall -Wextra -pedantic -Werror -Wno-self-assign-overloaded -Wno-missing-braces -g -std=gnu++17 -o any/CMakeFiles/any_public_test.dir/any_public_test.cpp.o -c /home/rodion/Documents/cppmipt_spring2022/any/any_public_test.cpp",
+  "file": "/home/rodion/Documents/cppmipt_spring2022/any/any_public_test.cpp"
+},
+{
+  "directory": "/home/rodion/Documents/cppmipt_spring2022/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/rodion/Documents/cppmipt_spring2022/.  -fsanitize=address,undefined -Wall -Wextra -pedantic -Werror -Wno-self-assign-overloaded -Wno-missing-braces -g -std=gnu++17 -o array/CMakeFiles/array_public_test.dir/array_public_test.cpp.o -c /home/rodion/Documents/cppmipt_spring2022/array/array_public_test.cpp",
+  "file": "/home/rodion/Documents/cppmipt_spring2022/array/array_public_test.cpp"
+},
+{
+  "directory": "/home/rodion/Documents/cppmipt_spring2022/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/rodion/Documents/cppmipt_spring2022/.  -fsanitize=address,undefined -Wall -Wextra -pedantic -Werror -Wno-self-assign-overloaded -Wno-missing-braces -g -std=gnu++17 -o big_integer/CMakeFiles/big_integer_public_test.dir/big_integer_public_test.cpp.o -c /home/rodion/Documents/cppmipt_spring2022/big_integer/big_integer_public_test.cpp",
+  "file": "/home/rodion/Documents/cppmipt_spring2022/big_integer/big_integer_public_test.cpp"
+},
+{
+  "directory": "/home/rodion/Documents/cppmipt_spring2022/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/rodion/Documents/cppmipt_spring2022/.  -fsanitize=address,undefined -Wall -Wextra -pedantic -Werror -Wno-self-assign-overloaded -Wno-missing-braces -g -std=gnu++17 -o big_integer/CMakeFiles/big_integer_public_test.dir/big_integer.cpp.o -c /home/rodion/Documents/cppmipt_spring2022/big_integer/big_integer.cpp",
+  "file": "/home/rodion/Documents/cppmipt_spring2022/big_integer/big_integer.cpp"
+},
+{
+  "directory": "/home/rodion/Documents/cppmipt_spring2022/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/rodion/Documents/cppmipt_spring2022/.  -fsanitize=address,undefined -Wall -Wextra -pedantic -Werror -Wno-self-assign-overloaded -Wno-missing-braces -g -std=gnu++17 -o calculator/tokenize/CMakeFiles/tokenize_public_test.dir/tokenize.cpp.o -c /home/rodion/Documents/cppmipt_spring2022/calculator/tokenize/tokenize.cpp",
+  "file": "/home/rodion/Documents/cppmipt_spring2022/calculator/tokenize/tokenize.cpp"
+},
+{
+  "directory": "/home/rodion/Documents/cppmipt_spring2022/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/rodion/Documents/cppmipt_spring2022/.  -fsanitize=address,undefined -Wall -Wextra -pedantic -Werror -Wno-self-assign-overloaded -Wno-missing-braces -g -std=gnu++17 -o calculator/tokenize/CMakeFiles/tokenize_public_test.dir/tokenize_public_test.cpp.o -c /home/rodion/Documents/cppmipt_spring2022/calculator/tokenize/tokenize_public_test.cpp",
+  "file": "/home/rodion/Documents/cppmipt_spring2022/calculator/tokenize/tokenize_public_test.cpp"
+},
+{
+  "directory": "/home/rodion/Documents/cppmipt_spring2022/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/rodion/Documents/cppmipt_spring2022/.  -fsanitize=address,undefined -Wall -Wextra -pedantic -Werror -Wno-self-assign-overloaded -Wno-missing-braces -g -std=gnu++17 -o calculator/polish_notation/CMakeFiles/polish_notation_public_test.dir/polish_notation.cpp.o -c /home/rodion/Documents/cppmipt_spring2022/calculator/polish_notation/polish_notation.cpp",
+  "file": "/home/rodion/Documents/cppmipt_spring2022/calculator/polish_notation/polish_notation.cpp"
+},
+{
+  "directory": "/home/rodion/Documents/cppmipt_spring2022/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/rodion/Documents/cppmipt_spring2022/.  -fsanitize=address,undefined -Wall -Wextra -pedantic -Werror -Wno-self-assign-overloaded -Wno-missing-braces -g -std=gnu++17 -o calculator/polish_notation/CMakeFiles/polish_notation_public_test.dir/polish_notation_public_test.cpp.o -c /home/rodion/Documents/cppmipt_spring2022/calculator/polish_notation/polish_notation_public_test.cpp",
+  "file": "/home/rodion/Documents/cppmipt_spring2022/calculator/polish_notation/polish_notation_public_test.cpp"
+},
+{
+  "directory": "/home/rodion/Documents/cppmipt_spring2022/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/rodion/Documents/cppmipt_spring2022/.  -fsanitize=address,undefined -Wall -Wextra -pedantic -Werror -Wno-self-assign-overloaded -Wno-missing-braces -g -std=gnu++17 -o calculator/polish_notation/CMakeFiles/polish_notation_public_test.dir/__/tokenize/tokenize.cpp.o -c /home/rodion/Documents/cppmipt_spring2022/calculator/tokenize/tokenize.cpp",
+  "file": "/home/rodion/Documents/cppmipt_spring2022/calculator/tokenize/tokenize.cpp"
+},
+{
+  "directory": "/home/rodion/Documents/cppmipt_spring2022/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/rodion/Documents/cppmipt_spring2022/.  -fsanitize=address,undefined -Wall -Wextra -pedantic -Werror -Wno-self-assign-overloaded -Wno-missing-braces -g -std=gnu++17 -o calculator/calculator/CMakeFiles/calculator_public_test.dir/__/tokenize/tokenize.cpp.o -c /home/rodion/Documents/cppmipt_spring2022/calculator/tokenize/tokenize.cpp",
+  "file": "/home/rodion/Documents/cppmipt_spring2022/calculator/tokenize/tokenize.cpp"
+},
+{
+  "directory": "/home/rodion/Documents/cppmipt_spring2022/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/rodion/Documents/cppmipt_spring2022/.  -fsanitize=address,undefined -Wall -Wextra -pedantic -Werror -Wno-self-assign-overloaded -Wno-missing-braces -g -std=gnu++17 -o calculator/calculator/CMakeFiles/calculator_public_test.dir/calculator.cpp.o -c /home/rodion/Documents/cppmipt_spring2022/calculator/calculator/calculator.cpp",
+  "file": "/home/rodion/Documents/cppmipt_spring2022/calculator/calculator/calculator.cpp"
+},
+{
+  "directory": "/home/rodion/Documents/cppmipt_spring2022/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/rodion/Documents/cppmipt_spring2022/.  -fsanitize=address,undefined -Wall -Wextra -pedantic -Werror -Wno-self-assign-overloaded -Wno-missing-braces -g -std=gnu++17 -o calculator/calculator/CMakeFiles/calculator_public_test.dir/parser.cpp.o -c /home/rodion/Documents/cppmipt_spring2022/calculator/calculator/parser.cpp",
+  "file": "/home/rodion/Documents/cppmipt_spring2022/calculator/calculator/parser.cpp"
+},
+{
+  "directory": "/home/rodion/Documents/cppmipt_spring2022/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/rodion/Documents/cppmipt_spring2022/.  -fsanitize=address,undefined -Wall -Wextra -pedantic -Werror -Wno-self-assign-overloaded -Wno-missing-braces -g -std=gnu++17 -o calculator/calculator/CMakeFiles/calculator_public_test.dir/calculator_public_test.cpp.o -c /home/rodion/Documents/cppmipt_spring2022/calculator/calculator/calculator_public_test.cpp",
+  "file": "/home/rodion/Documents/cppmipt_spring2022/calculator/calculator/calculator_public_test.cpp"
+},
+{
+  "directory": "/home/rodion/Documents/cppmipt_spring2022/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/rodion/Documents/cppmipt_spring2022/.  -fsanitize=address,undefined -Wall -Wextra -pedantic -Werror -Wno-self-assign-overloaded -Wno-missing-braces -g -std=gnu++17 -o frozen_set/CMakeFiles/frozen_set_public_test.dir/frozen_set_public_test.cpp.o -c /home/rodion/Documents/cppmipt_spring2022/frozen_set/frozen_set_public_test.cpp",
+  "file": "/home/rodion/Documents/cppmipt_spring2022/frozen_set/frozen_set_public_test.cpp"
+},
+{
+  "directory": "/home/rodion/Documents/cppmipt_spring2022/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/rodion/Documents/cppmipt_spring2022/.  -fsanitize=address,undefined -Wall -Wextra -pedantic -Werror -Wno-self-assign-overloaded -Wno-missing-braces -g -std=gnu++17 -o geometry/CMakeFiles/geometry_public_test.dir/geometry_main.cpp.o -c /home/rodion/Documents/cppmipt_spring2022/geometry/geometry_main.cpp",
+  "file": "/home/rodion/Documents/cppmipt_spring2022/geometry/geometry_main.cpp"
+},
+{
+  "directory": "/home/rodion/Documents/cppmipt_spring2022/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/rodion/Documents/cppmipt_spring2022/.  -fsanitize=address,undefined -Wall -Wextra -pedantic -Werror -Wno-self-assign-overloaded -Wno-missing-braces -g -std=gnu++17 -o inserter/CMakeFiles/inserter_public_test.dir/inserter_public_test.cpp.o -c /home/rodion/Documents/cppmipt_spring2022/inserter/inserter_public_test.cpp",
+  "file": "/home/rodion/Documents/cppmipt_spring2022/inserter/inserter_public_test.cpp"
+},
+{
+  "directory": "/home/rodion/Documents/cppmipt_spring2022/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/rodion/Documents/cppmipt_spring2022/.  -fsanitize=address,undefined -Wall -Wextra -pedantic -Werror -Wno-self-assign-overloaded -Wno-missing-braces -g -std=gnu++17 -o itertools/enumerate/CMakeFiles/enumerate_public_test.dir/enumerate_public_test.cpp.o -c /home/rodion/Documents/cppmipt_spring2022/itertools/enumerate/enumerate_public_test.cpp",
+  "file": "/home/rodion/Documents/cppmipt_spring2022/itertools/enumerate/enumerate_public_test.cpp"
+},
+{
+  "directory": "/home/rodion/Documents/cppmipt_spring2022/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/rodion/Documents/cppmipt_spring2022/.  -fsanitize=address,undefined -Wall -Wextra -pedantic -Werror -Wno-self-assign-overloaded -Wno-missing-braces -g -std=gnu++17 -o itertools/range/CMakeFiles/range_public_test.dir/range_public_test.cpp.o -c /home/rodion/Documents/cppmipt_spring2022/itertools/range/range_public_test.cpp",
+  "file": "/home/rodion/Documents/cppmipt_spring2022/itertools/range/range_public_test.cpp"
+},
+{
+  "directory": "/home/rodion/Documents/cppmipt_spring2022/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/rodion/Documents/cppmipt_spring2022/.  -fsanitize=address,undefined -Wall -Wextra -pedantic -Werror -Wno-self-assign-overloaded -Wno-missing-braces -g -std=gnu++17 -o itertools/reversed/CMakeFiles/reversed_public_test.dir/reversed_public_test.cpp.o -c /home/rodion/Documents/cppmipt_spring2022/itertools/reversed/reversed_public_test.cpp",
+  "file": "/home/rodion/Documents/cppmipt_spring2022/itertools/reversed/reversed_public_test.cpp"
+},
+{
+  "directory": "/home/rodion/Documents/cppmipt_spring2022/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/rodion/Documents/cppmipt_spring2022/.  -fsanitize=address,undefined -Wall -Wextra -pedantic -Werror -Wno-self-assign-overloaded -Wno-missing-braces -g -std=gnu++17 -o matrix/CMakeFiles/matrix_public_test.dir/__/rational/rational.cpp.o -c /home/rodion/Documents/cppmipt_spring2022/rational/rational.cpp",
+  "file": "/home/rodion/Documents/cppmipt_spring2022/rational/rational.cpp"
+},
+{
+  "directory": "/home/rodion/Documents/cppmipt_spring2022/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/rodion/Documents/cppmipt_spring2022/.  -fsanitize=address,undefined -Wall -Wextra -pedantic -Werror -Wno-self-assign-overloaded -Wno-missing-braces -g -std=gnu++17 -o matrix/CMakeFiles/matrix_public_test.dir/matrix_public_test.cpp.o -c /home/rodion/Documents/cppmipt_spring2022/matrix/matrix_public_test.cpp",
+  "file": "/home/rodion/Documents/cppmipt_spring2022/matrix/matrix_public_test.cpp"
+},
+{
+  "directory": "/home/rodion/Documents/cppmipt_spring2022/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/rodion/Documents/cppmipt_spring2022/.  -fsanitize=address,undefined -Wall -Wextra -pedantic -Werror -Wno-self-assign-overloaded -Wno-missing-braces -g -std=gnu++17 -o move_iterator/CMakeFiles/move_iterator_public_test.dir/move_iterator_public_test.cpp.o -c /home/rodion/Documents/cppmipt_spring2022/move_iterator/move_iterator_public_test.cpp",
+  "file": "/home/rodion/Documents/cppmipt_spring2022/move_iterator/move_iterator_public_test.cpp"
+},
+{
+  "directory": "/home/rodion/Documents/cppmipt_spring2022/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/rodion/Documents/cppmipt_spring2022/.  -fsanitize=address,undefined -Wall -Wextra -pedantic -Werror -Wno-self-assign-overloaded -Wno-missing-braces -g -std=gnu++17 -o optional/CMakeFiles/optional_public_test.dir/optional_public_test.cpp.o -c /home/rodion/Documents/cppmipt_spring2022/optional/optional_public_test.cpp",
+  "file": "/home/rodion/Documents/cppmipt_spring2022/optional/optional_public_test.cpp"
+},
+{
+  "directory": "/home/rodion/Documents/cppmipt_spring2022/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/rodion/Documents/cppmipt_spring2022/.  -fsanitize=address,undefined -Wall -Wextra -pedantic -Werror -Wno-self-assign-overloaded -Wno-missing-braces -g -std=gnu++17 -o random/CMakeFiles/random_public_test.dir/random.cpp.o -c /home/rodion/Documents/cppmipt_spring2022/random/random.cpp",
+  "file": "/home/rodion/Documents/cppmipt_spring2022/random/random.cpp"
+},
+{
+  "directory": "/home/rodion/Documents/cppmipt_spring2022/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/rodion/Documents/cppmipt_spring2022/.  -fsanitize=address,undefined -Wall -Wextra -pedantic -Werror -Wno-self-assign-overloaded -Wno-missing-braces -g -std=gnu++17 -o random/CMakeFiles/random_public_test.dir/random_public_test.cpp.o -c /home/rodion/Documents/cppmipt_spring2022/random/random_public_test.cpp",
+  "file": "/home/rodion/Documents/cppmipt_spring2022/random/random_public_test.cpp"
+},
+{
+  "directory": "/home/rodion/Documents/cppmipt_spring2022/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/rodion/Documents/cppmipt_spring2022/.  -fsanitize=address,undefined -Wall -Wextra -pedantic -Werror -Wno-self-assign-overloaded -Wno-missing-braces -g -std=gnu++17 -o rational/CMakeFiles/rational_public_test.dir/rational.cpp.o -c /home/rodion/Documents/cppmipt_spring2022/rational/rational.cpp",
+  "file": "/home/rodion/Documents/cppmipt_spring2022/rational/rational.cpp"
+},
+{
+  "directory": "/home/rodion/Documents/cppmipt_spring2022/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/rodion/Documents/cppmipt_spring2022/.  -fsanitize=address,undefined -Wall -Wextra -pedantic -Werror -Wno-self-assign-overloaded -Wno-missing-braces -g -std=gnu++17 -o rational/CMakeFiles/rational_public_test.dir/rational_public_test.cpp.o -c /home/rodion/Documents/cppmipt_spring2022/rational/rational_public_test.cpp",
+  "file": "/home/rodion/Documents/cppmipt_spring2022/rational/rational_public_test.cpp"
+},
+{
+  "directory": "/home/rodion/Documents/cppmipt_spring2022/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/rodion/Documents/cppmipt_spring2022/.  -fsanitize=address,undefined -Wall -Wextra -pedantic -Werror -Wno-self-assign-overloaded -Wno-missing-braces -g -std=gnu++17 -o reverse_iterator/CMakeFiles/reverse_iterator_public_test.dir/reverse_iterator_public_test.cpp.o -c /home/rodion/Documents/cppmipt_spring2022/reverse_iterator/reverse_iterator_public_test.cpp",
+  "file": "/home/rodion/Documents/cppmipt_spring2022/reverse_iterator/reverse_iterator_public_test.cpp"
+},
+{
+  "directory": "/home/rodion/Documents/cppmipt_spring2022/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/rodion/Documents/cppmipt_spring2022/.  -fsanitize=address,undefined -Wall -Wextra -pedantic -Werror -Wno-self-assign-overloaded -Wno-missing-braces -g -std=gnu++17 -o shared_ptr/CMakeFiles/shared_ptr_public_test.dir/shared_ptr_public_test.cpp.o -c /home/rodion/Documents/cppmipt_spring2022/shared_ptr/shared_ptr_public_test.cpp",
+  "file": "/home/rodion/Documents/cppmipt_spring2022/shared_ptr/shared_ptr_public_test.cpp"
+},
+{
+  "directory": "/home/rodion/Documents/cppmipt_spring2022/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/rodion/Documents/cppmipt_spring2022/.  -fsanitize=address,undefined -Wall -Wextra -pedantic -Werror -Wno-self-assign-overloaded -Wno-missing-braces -g -std=gnu++17 -o string/CMakeFiles/string_public_test.dir/cppstring.cpp.o -c /home/rodion/Documents/cppmipt_spring2022/string/cppstring.cpp",
+  "file": "/home/rodion/Documents/cppmipt_spring2022/string/cppstring.cpp"
+},
+{
+  "directory": "/home/rodion/Documents/cppmipt_spring2022/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/rodion/Documents/cppmipt_spring2022/.  -fsanitize=address,undefined -Wall -Wextra -pedantic -Werror -Wno-self-assign-overloaded -Wno-missing-braces -g -std=gnu++17 -o string/CMakeFiles/string_public_test.dir/string_public_test.cpp.o -c /home/rodion/Documents/cppmipt_spring2022/string/string_public_test.cpp",
+  "file": "/home/rodion/Documents/cppmipt_spring2022/string/string_public_test.cpp"
+},
+{
+  "directory": "/home/rodion/Documents/cppmipt_spring2022/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/rodion/Documents/cppmipt_spring2022/.  -fsanitize=address,undefined -Wall -Wextra -pedantic -Werror -Wno-self-assign-overloaded -Wno-missing-braces -g -std=gnu++17 -o string_view/CMakeFiles/string_view_public_test.dir/string_view_public_test.cpp.o -c /home/rodion/Documents/cppmipt_spring2022/string_view/string_view_public_test.cpp",
+  "file": "/home/rodion/Documents/cppmipt_spring2022/string_view/string_view_public_test.cpp"
+},
+{
+  "directory": "/home/rodion/Documents/cppmipt_spring2022/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/rodion/Documents/cppmipt_spring2022/.  -fsanitize=address,undefined -Wall -Wextra -pedantic -Werror -Wno-self-assign-overloaded -Wno-missing-braces -g -std=gnu++17 -o string_view/CMakeFiles/string_view_public_test.dir/string_view.cpp.o -c /home/rodion/Documents/cppmipt_spring2022/string_view/string_view.cpp",
+  "file": "/home/rodion/Documents/cppmipt_spring2022/string_view/string_view.cpp"
+},
+{
+  "directory": "/home/rodion/Documents/cppmipt_spring2022/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/rodion/Documents/cppmipt_spring2022/.  -fsanitize=address,undefined -Wall -Wextra -pedantic -Werror -Wno-self-assign-overloaded -Wno-missing-braces -g -std=gnu++17 -o unique_ptr/CMakeFiles/unique_ptr_public_test.dir/unique_ptr_public_test.cpp.o -c /home/rodion/Documents/cppmipt_spring2022/unique_ptr/unique_ptr_public_test.cpp",
+  "file": "/home/rodion/Documents/cppmipt_spring2022/unique_ptr/unique_ptr_public_test.cpp"
+},
+{
+  "directory": "/home/rodion/Documents/cppmipt_spring2022/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/rodion/Documents/cppmipt_spring2022/.  -fsanitize=address,undefined -Wall -Wextra -pedantic -Werror -Wno-self-assign-overloaded -Wno-missing-braces -g -std=gnu++17 -o unordered_set/CMakeFiles/unordered_set_public_test.dir/unordered_set_public_test.cpp.o -c /home/rodion/Documents/cppmipt_spring2022/unordered_set/unordered_set_public_test.cpp",
+  "file": "/home/rodion/Documents/cppmipt_spring2022/unordered_set/unordered_set_public_test.cpp"
+},
+{
+  "directory": "/home/rodion/Documents/cppmipt_spring2022/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/rodion/Documents/cppmipt_spring2022/.  -fsanitize=address,undefined -Wall -Wextra -pedantic -Werror -Wno-self-assign-overloaded -Wno-missing-braces -g -std=gnu++17 -o vector/CMakeFiles/vector_public_test.dir/vector_public_test.cpp.o -c /home/rodion/Documents/cppmipt_spring2022/vector/vector_public_test.cpp",
+  "file": "/home/rodion/Documents/cppmipt_spring2022/vector/vector_public_test.cpp"
+}
+]

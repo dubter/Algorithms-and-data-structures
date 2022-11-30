@@ -1,0 +1,1 @@
+add_executable(unique_ptr_public_test unique_ptr_public_test.cpp)

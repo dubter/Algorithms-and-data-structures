@@ -1,0 +1,1 @@
+add_executable(gcd_public_test gcd_public_test.cpp)

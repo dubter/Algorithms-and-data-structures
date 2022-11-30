@@ -1,0 +1,1 @@
+add_executable(string_public_test cppstring.cpp string_public_test.cpp)
