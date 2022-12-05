@@ -1,96 +1,124 @@
-#ifndef CONTEST_TEMPLATES_AND_LONG_ARITHMETIC__A_ARRAY_H_
-#define CONTEST_TEMPLATES_AND_LONG_ARITHMETIC__A_ARRAY_H_
+#pragma once
 #define ARRAY_TRAITS_IMPLEMENTED
+#include <iostream>
 #include <stdexcept>
+
 class ArrayOutOfRange : public std::out_of_range {
  public:
   ArrayOutOfRange() : std::out_of_range("ArrayOutOfRange") {
   }
 };
+
+static bool empty = true;
+
 template <class T, size_t N>
 class Array {
  public:
   T buffer_[N];
+
   T& At(size_t idx) {
-    if (idx >= N) {
+    empty = false;
+    if (idx >= N || idx < 0) {
       throw ArrayOutOfRange{};
     }
     return buffer_[idx];
   }
+
   const T& At(size_t idx) const {
-    if (idx >= N) {
+    if (idx >= N || idx < 0) {
       throw ArrayOutOfRange{};
     }
     return buffer_[idx];
   }
+
   T& operator[](size_t idx) {
+    empty = false;
     return buffer_[idx];
   }
+
   const T& operator[](size_t idx) const {
     return buffer_[idx];
   }
+
   T& Front() {
-    return At(0);
+    empty = false;
+    return buffer_[0];
   }
+
   const T& Front() const {
-    return At(0);
+    return buffer_[0];
   }
+
   T& Back() {
-    return At(N - 1);
+    empty = false;
+    return buffer_[N - 1];
   }
+
   const T& Back() const {
-    return At(N - 1);
+    return buffer_[N - 1];
   }
+
+  T* Data() {
+    empty = false;
+    return &(buffer_[0]);
+  }
+
   const T* Data() const {
-    return buffer_;
+    return &(buffer_[0]);
   }
+
   size_t Size() const {
     return N;
   }
-  bool Empty() const {
-    bool empty = true;
-    if (N != 0) {
-      empty = false;
-      return empty;
-    }
+
+  const bool& Empty() const {
+    empty = !empty;
     return empty;
   }
+
   void Fill(const T& value) {
-    for (size_t i = 0; i < N; ++i) {
+    empty = false;
+    for (size_t i = 0; i < N; i++) {
       buffer_[i] = value;
     }
   }
+
   void Swap(Array<T, N>& other) {
-    for (size_t i = 0; i < N; ++i) {
-      T tmp = buffer_[i];
-      buffer_[i] = other.buffer_[i];
-      other.buffer_[i] = tmp;
+    T tmp[N];
+    for (size_t i = 0; i < N; i++) {
+      tmp[i] = buffer_[i];
+      buffer_[i] = other[i];
+      other[i] = tmp[i];
     }
   }
 };
 
 template <class T>
-size_t GetSize(const T) {
+int GetSize(const T) {
   return 0;
 }
-template <class T, size_t N>
-size_t GetSize(const T (&)[N]) {
+
+template <class T, int N>
+int GetSize(const T (&)[N]) {
   return N;
 }
+
 template <class T>
-size_t GetRank(const T) {
+int GetRank(const T) {
   return 0;
 }
-template <class T, size_t N>
-size_t GetRank(const T (&array)[N]) {
+
+template <class T, int N>
+int GetRank(const T (&array)[N]) {
   return 1 + GetRank(array[0]);
 }
+
 template <class T>
-size_t GetNumElements(const T) {
+int GetNumElements(const T) {
   return 1;
 }
-template <class T, size_t N>
-size_t GetNumElements(const T (&array)[N]) {
-  return GetSize(array) * GetNumElements(array[0]);
+
+template <class T, int N>
+int GetNumElements(const T (&array)[N]) {
+  return GetNumElements(array[0]) * N;
 }
-#endif  // CONTEST_TEMPLATES_AND_LONG_ARITHMETIC__A_ARRAY_H_

@@ -1,8 +1,7 @@
-#ifndef UNTITLED_CMAKE_BUILD_DEBUG_MATRIX_DRAFT_H_
-#define UNTITLED_CMAKE_BUILD_DEBUG_MATRIX_DRAFT_H_
-#include <cstddef>
-#include <iostream>
+#pragma once
 #include <stdexcept>
+#include <iostream>
+#include <sstream>
 
 class MatrixIsDegenerateError : public std::runtime_error {
  public:
@@ -16,247 +15,240 @@ class MatrixOutOfRange : public std::out_of_range {
   }
 };
 
-template <class T, const size_t R, const size_t C>
+template <class T, size_t M, size_t N>
 class Matrix {
  public:
-  T matrix[R][C];
-  size_t RowsNumber() const;
-  size_t ColumnsNumber() const;
-  T& operator()(size_t, size_t);
-  const T& operator()(size_t, size_t) const;
-  T& At(size_t, size_t);
-  const T& At(size_t, size_t) const;
-  Matrix<T, R, C> operator+(const Matrix<T, R, C>&) const;
-  Matrix<T, R, C> operator-(const Matrix<T, R, C>&) const;
-  Matrix<T, R, C>& operator+=(const Matrix<T, R, C>&);
-  Matrix<T, R, C>& operator-=(const Matrix<T, R, C>&);
+  T matrix[M][N];
+
+  size_t RowsNumber() const {
+    return M;
+  }
+
+  size_t ColumnsNumber() const {
+    return N;
+  }
+
+  const T &operator()(const size_t &first, const size_t &second) const {
+    return matrix[first][second];
+  }
+
+  T &operator()(const size_t &first, const size_t &second) {
+    return matrix[first][second];
+  }
+
+  const T &At(const size_t &first, const size_t &second) const {
+    if (first >= M || second >= N) {
+      throw MatrixOutOfRange{};
+    }
+    return matrix[first][second];
+  }
+
+  T &At(const size_t &first, const size_t &second) {
+    if (first >= M || second >= N) {
+      throw MatrixOutOfRange{};
+    }
+    return matrix[first][second];
+  }
+
+  Matrix<T, M, N> operator+(const Matrix<T, M, N> &matrix1) const {
+    if (M != matrix1.RowsNumber() || N != matrix1.ColumnsNumber()) {
+      throw MatrixIsDegenerateError{};
+    }
+    Matrix<T, M, N> matrix2;
+    for (size_t i = 0; i < M; i++) {
+      for (size_t j = 0; j < N; j++) {
+        matrix2.matrix[i][j] = matrix[i][j] + matrix1.matrix[i][j];
+      }
+    }
+    return matrix2;
+  }
+
+  Matrix<T, M, N> operator-(const Matrix<T, M, N> &matrix1) const {
+    if (M != matrix1.RowsNumber() || N != matrix1.ColumnsNumber()) {
+      throw MatrixIsDegenerateError{};
+    }
+    Matrix<T, M, N> matrix2;
+    for (size_t i = 0; i < M; i++) {
+      for (size_t j = 0; j < N; j++) {
+        matrix2.matrix[i][j] = matrix[i][j] - matrix1.matrix[i][j];
+      }
+    }
+    return matrix2;
+  }
+
+  Matrix<T, M, N> &operator+=(const Matrix<T, M, N> &matrix1) {
+    if (M != matrix1.RowsNumber() || N != matrix1.ColumnsNumber()) {
+      throw MatrixIsDegenerateError{};
+    }
+    for (size_t i = 0; i < M; i++) {
+      for (size_t j = 0; j < N; j++) {
+        matrix[i][j] += matrix1.matrix[i][j];
+      }
+    }
+    return *this;
+  }
+
+  Matrix &operator-=(const Matrix &matrix1) {
+    if (M != matrix1.RowsNumber() || N != matrix1.ColumnsNumber()) {
+      throw MatrixIsDegenerateError{};
+    }
+    for (size_t i = 0; i < M; i++) {
+      for (size_t j = 0; j < N; j++) {
+        matrix[i][j] -= matrix1.matrix[i][j];
+      }
+    }
+    return *this;
+  }
+
+  Matrix operator*(const T &num) const {
+    Matrix matrix1;
+    for (size_t i = 0; i < M; i++) {
+      for (size_t j = 0; j < N; j++) {
+        matrix1.matrix[i][j] = matrix[i][j] * num;
+      }
+    }
+    return matrix1;
+  }
+
+  Matrix operator/(const T &num) const {
+    Matrix matrix1;
+    for (size_t i = 0; i < M; i++) {
+      for (size_t j = 0; j < N; j++) {
+        matrix1.matrix[i][j] = matrix[i][j] / num;
+      }
+    }
+    return matrix1;
+  }
+
+  Matrix &operator*=(const T &num) {
+    for (size_t i = 0; i < M; i++) {
+      for (size_t j = 0; j < N; j++) {
+        matrix[i][j] *= num;
+      }
+    }
+    return *this;
+  }
+
+  Matrix &operator/=(const T &num) {
+    for (size_t i = 0; i < M; i++) {
+      for (size_t j = 0; j < N; j++) {
+        matrix[i][j] /= num;
+      }
+    }
+    return *this;
+  }
+
+  bool operator==(const Matrix &matrix1) const {
+    if (N != matrix1.ColumnsNumber() || M != matrix1.RowsNumber()) {
+      throw MatrixIsDegenerateError{};
+    }
+    bool result = true;
+    for (size_t i = 0; i < M; i++) {
+      for (size_t j = 0; j < N; j++) {
+        if (matrix1.matrix[i][j] != matrix[i][j]) {
+          result = false;
+          break;
+        }
+      }
+    }
+    return result;
+  }
+
+  bool operator!=(const Matrix &matrix1) const {
+    return !(*this == matrix1);
+  }
 };
-template <class T, const size_t R, const size_t C>
-size_t Matrix<T, R, C>::RowsNumber() const {
-  return R;
-}
-template <class T, const size_t R, const size_t C>
-size_t Matrix<T, R, C>::ColumnsNumber() const {
-  return C;
-}
-template <class T, const size_t R, const size_t C>
-T& Matrix<T, R, C>::operator()(size_t row, size_t col) {
-  return matrix[row][col];
-}
-template <class T, const size_t R, const size_t C>
-const T& Matrix<T, R, C>::operator()(size_t row, size_t col) const {
-  return matrix[row][col];
-}
-template <class T, const size_t R, const size_t C>
-T& Matrix<T, R, C>::At(size_t row, size_t col) {
-  if (row >= R || col >= C) {
-    throw MatrixOutOfRange{};
-  }
-  return matrix[row][col];
-}
-template <class T, const size_t R, const size_t C>
-const T& Matrix<T, R, C>::At(size_t row, size_t col) const {
-  if (row >= R || col >= C) {
-    throw MatrixOutOfRange{};
-  }
-  return matrix[row][col];
-}
-template <class T, const size_t R, const size_t C>
-Matrix<T, C, R> GetTransposed(const Matrix<T, R, C> m) {
-  Matrix<T, C, R> m_transposed;
-  for (size_t i = 0; i < R; ++i) {
-    for (size_t j = 0; j < C; ++j) {
-      m_transposed.matrix[j][i] = m.matrix[i][j];
+
+template <class T, size_t M, size_t N>
+Matrix<T, N, M> GetTransposed(const Matrix<T, M, N> &matrix1) {
+  Matrix<T, N, M> matrix2;
+  for (size_t i = 0; i < N; i++) {
+    for (size_t j = 0; j < M; j++) {
+      matrix2.matrix[i][j] = matrix1.matrix[j][i];
     }
   }
-  return m_transposed;
+  return matrix2;
 }
-template <class T, const size_t R, const size_t C>
-Matrix<T, R, C> Matrix<T, R, C>::operator+(const Matrix<T, R, C>& m) const {
-  Matrix<T, R, C> tmp;
-  for (size_t i = 0; i < R; ++i) {
-    for (size_t j = 0; j < C; ++j) {
-      tmp.matrix[i][j] = this->matrix[i][j] + m.matrix[i][j];
+
+template <class G, class T, size_t M, size_t N>
+Matrix<T, M, N> operator*(const G &num, const Matrix<T, M, N> &matrix1) {
+  Matrix<T, M, N> matrix2;
+  for (size_t i = 0; i < M; i++) {
+    for (size_t j = 0; j < N; j++) {
+      matrix2.matrix[i][j] = num * matrix1.matrix[i][j];
     }
   }
-  return tmp;
+  return matrix2;
 }
-template <class T, const size_t R, const size_t C>
-Matrix<T, R, C> Matrix<T, R, C>::operator-(const Matrix<T, R, C>& m) const {
-  Matrix<T, R, C> tmp;
-  for (size_t i = 0; i < R; ++i) {
-    for (size_t j = 0; j < C; ++j) {
-      tmp.matrix[i][j] = this->matrix[i][j] - m.matrix[i][j];
+
+template <class T, size_t M, size_t N>
+Matrix<T, M, N> operator/(const T &num, const Matrix<T, M, N> &matrix1) {
+  Matrix<T, M, N> matrix2;
+  for (size_t i = 0; i < M; i++) {
+    for (size_t j = 0; j < N; j++) {
+      matrix2.matrix[i][j] = matrix1.matrix[i][j] * num;
     }
   }
-  return tmp;
+  return matrix2;
 }
-template <class T, const size_t R, const size_t C, const size_t P>
-Matrix<T, R, P> operator*(const Matrix<T, R, C>& m1, const Matrix<T, C, P>& m2) {
-  Matrix<T, R, P> tmp;
-  for (size_t i = 0; i < P; ++i) {
-    for (size_t j = 0; j < R; ++j) {
-      tmp.matrix[j][i] = 0;
-      for (size_t k = 0; k < C; ++k) {
-        tmp.matrix[j][i] += m1.matrix[j][k] * m2.matrix[k][i];
+
+template <class T, size_t M, size_t N>
+std::ostream &operator<<(std::ostream &os, const Matrix<T, M, N> &matrix1) {
+  for (size_t i = 0; i < M; i++) {
+    for (size_t j = 0; j < N; j++) {
+      os << matrix1.matrix[i][j];
+      if (j != N - 1) {
+        os << " ";
       }
     }
+    os << std::endl;
   }
-  return tmp;
+  return os;
 }
-template <class T, const size_t R, const size_t C>
-Matrix<T, R, C>& Matrix<T, R, C>::operator+=(const Matrix<T, R, C>& m) {
-  for (size_t i = 0; i < R; ++i) {
-    for (size_t j = 0; j < C; ++j) {
-      this->matrix[i][j] += m.matrix[i][j];
-    }
-  }
-  return *this;
-}
-template <class T, const size_t R, const size_t C>
-Matrix<T, R, C>& Matrix<T, R, C>::operator-=(const Matrix<T, R, C>& m) {
-  for (size_t i = 0; i < R; ++i) {
-    for (size_t j = 0; j < C; ++j) {
-      this->matrix[i][j] -= m.matrix[i][j];
-    }
-  }
-  return *this;
-}
-template <class T, const size_t R, const size_t C, const size_t P>
-Matrix<T, R, P>& operator*=(Matrix<T, R, C>& m1, const Matrix<T, C, P>& m2) {
-  Matrix<T, R, P> tmp;
-  for (size_t i = 0; i < P; ++i) {
-    for (size_t j = 0; j < R; ++j) {
-      tmp.matrix[j][i] = 0;
-      for (size_t k = 0; k < C; ++k) {
-        tmp.matrix[j][i] += m1.matrix[j][k] * m2.matrix[k][i];
-      }
-    }
-  }
-  m1 = tmp;
-  return m1;
-}
-template <class T, class N, const size_t R, const size_t C>
-Matrix<T, R, C> operator*(const Matrix<T, R, C>& m, const N& num) {
-  Matrix<T, R, C> tmp;
-  for (size_t i = 0; i < R; ++i) {
-    for (size_t j = 0; j < C; ++j) {
-      tmp.matrix[i][j] = m.matrix[i][j] * num;
-    }
-  }
-  return tmp;
-}
-template <class T, class N, const size_t R, const size_t C>
-Matrix<T, R, C>& operator*=(Matrix<T, R, C>& m, const N& num) {
-  for (size_t i = 0; i < R; ++i) {
-    for (size_t j = 0; j < C; ++j) {
-      m.matrix[i][j] *= num;
-    }
-  }
-  return m;
-}
-template <class T, class N, const size_t R, const size_t C>
-Matrix<T, R, C> operator*(const N& num, const Matrix<T, R, C>& m) {
-  Matrix<T, R, C> tmp;
-  for (size_t i = 0; i < R; ++i) {
-    for (size_t j = 0; j < C; ++j) {
-      tmp.matrix[i][j] = m.matrix[i][j] * num;
-    }
-  }
-  return tmp;
-}
-template <class T, class N, const size_t R, const size_t C>
-Matrix<T, R, C>& operator*=(const N& num, Matrix<T, R, C>& m) {
-  for (size_t i = 0; i < R; ++i) {
-    for (size_t j = 0; j < C; ++j) {
-      m.matrix[i][j] *= num;
-    }
-  }
-  return m;
-}
-template <class T, class N, const size_t R, const size_t C>
-Matrix<T, R, C> operator/(const Matrix<T, R, C>& m, const N& num) {
-  Matrix<T, R, C> tmp;
-  for (size_t i = 0; i < R; ++i) {
-    for (size_t j = 0; j < C; ++j) {
-      tmp.matrix[i][j] = m.matrix[i][j] / num;
-    }
-  }
-  return tmp;
-}
-template <class T, class N, const size_t R, const size_t C>
-Matrix<T, R, C>& operator/=(Matrix<T, R, C>& m, const N& num) {
-  for (size_t i = 0; i < R; ++i) {
-    for (size_t j = 0; j < C; ++j) {
-      m.matrix[i][j] /= num;
-    }
-  }
-  return m;
-}
-template <class T, class N, const size_t R, const size_t C>
-Matrix<T, R, C> operator/(const N& num, const Matrix<T, R, C>& m) {
-  Matrix<T, R, C> tmp;
-  for (size_t i = 0; i < R; ++i) {
-    for (size_t j = 0; j < C; ++j) {
-      tmp.matrix[i][j] = m.matrix[i][j] / num;
-    }
-  }
-  return tmp;
-}
-template <class T, class N, const size_t R, const size_t C>
-Matrix<T, R, C>& operator/=(const N& num, Matrix<T, R, C>& m) {
-  for (size_t i = 0; i < R; ++i) {
-    for (size_t j = 0; j < C; ++j) {
-      m.matrix[i][j] /= num;
-    }
-  }
-  return m;
-}
-template <class T, const size_t R, const size_t C>
-bool operator==(Matrix<T, R, C> m1, Matrix<T, R, C> m2) {
-  bool equal = true;
-  for (size_t i = 0; i < R; ++i) {
-    for (size_t j = 0; j < C; ++j) {
-      if (m1.matrix[i][j] != m2.matrix[i][j]) {
-        return !equal;
-      }
-    }
-  }
-  return equal;
-}
-template <class T, const size_t R, const size_t C>
-bool operator!=(Matrix<T, R, C> m1, Matrix<T, R, C> m2) {
-  bool not_equal = true;
-  for (size_t i = 0; i < R; ++i) {
-    for (size_t j = 0; j < C; ++j) {
-      if (m1.matrix[i][j] != m2.matrix[i][j]) {
-        return not_equal;
-      }
-    }
-  }
-  return !not_equal;
-}
-template <class T, const size_t R, const size_t C>
-std::istream& operator>>(std::istream& is, Matrix<T, R, C>& m) {
-  for (size_t i = 0; i < R; ++i) {
-    for (size_t j = 0; j < C; ++j) {
-      is >> m.matrix[i][j];
+
+template <class T, size_t M, size_t N>
+std::istream &operator>>(std::istream &is, Matrix<T, M, N> &matrix1) {
+  for (size_t i = 0; i < M; i++) {
+    for (size_t j = 0; j < N; j++) {
+      is >> matrix1.matrix[i][j];
     }
   }
   return is;
 }
-template <class T, const size_t R, const size_t C>
-std::ostream& operator<<(std::ostream& os, const Matrix<T, R, C>& m) {
-  for (size_t i = 0; i < R; ++i) {
-    for (size_t j = 0; j < C; ++j) {
-      if (j < C - 1) {
-        os << m.matrix[i][j] << ' ';
-      } else {
-        os << m.matrix[i][j];
+
+template <class T, size_t M, size_t N, size_t K>
+Matrix<T, M, K> operator*(const Matrix<T, M, N> &matrix, const Matrix<T, N, K> &matrix1) {
+  if (N != matrix1.RowsNumber()) {
+    throw MatrixIsDegenerateError{};
+  }
+  Matrix<T, M, K> matrix2;
+  for (size_t i = 0; i < M; i++) {
+    for (size_t j = 0; j < K; j++) {
+      for (size_t k = 0; k < N; k++) {
+        matrix2.matrix[i][j] += matrix.matrix[i][k] * matrix1.matrix[k][j];
       }
     }
-    os << '\n';
   }
-  return os;
+  return matrix2;
 }
-#endif  // UNTITLED_CMAKE_BUILD_DEBUG_MATRIX_DRAFT_H_
+
+template <class T, size_t M, size_t N, size_t K>
+Matrix<T, M, K> &operator*=(Matrix<T, M, N> &matrix1, const Matrix<T, N, K> &matrix2) {
+  if (N != matrix2.RowsNumber()) {
+    throw MatrixIsDegenerateError{};
+  }
+  T tmp[M][K] = {};
+  for (size_t i = 0; i < M; i++) {
+    for (size_t j = 0; j < K; j++) {
+      for (size_t k = 0; k < N; k++) {
+        tmp[i][j] += matrix1.matrix[i][k] * matrix2.matrix[k][j];
+      }
+    }
+  }
+  for (size_t i = 0; i < M; i++) {
+    for (size_t j = 0; j < K; j++) {
+      matrix1.matrix[i][j] = tmp[i][j];
+    }
+  }
+  return matrix1;
+}

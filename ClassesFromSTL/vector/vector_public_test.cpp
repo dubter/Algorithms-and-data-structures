@@ -6,8 +6,8 @@
 #include <vector>
 #include <type_traits>
 
-#include "vector.h"
-#include "vector.h"  // check include guards
+#include "my_vector.h"
+#include "my_vector.h"  // check include guards
 
 template <class T>
 void Equal(const Vector<T>& real, const std::vector<T>& required) {

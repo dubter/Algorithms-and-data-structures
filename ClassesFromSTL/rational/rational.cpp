@@ -1,245 +1,280 @@
 #include <iostream>
 #include "rational.h"
+#include "gcd.h"
 
-Rational::Rational() : numerator_(0), denominator_(1) {
-}
-
-Rational::Rational(int64_t val) : numerator_(val), denominator_(1) {  // NOLINT
-}
-
-Rational::Rational(const Rational &other) = default;
-
-Rational::Rational(int64_t x, int64_t y) : numerator_(x), denominator_(y) {
-  if (y == 0) {
+void Rational::Reduction() {
+  int sign = 1;
+  if (denominator_ == 0) {
     throw RationalDivisionByZero{};
   }
-  Normalize();
+  if ((numerator_ * denominator_ < 0)) {
+    sign = -1;
+  }
+  int32_t gcd = Gcd(abs(numerator_), abs(denominator_));
+  numerator_ = sign * abs(numerator_) / gcd;
+  denominator_ = abs(denominator_) / gcd;
 }
 
-int64_t Rational::GetDenominator() const {
-  return denominator_;
+Rational::Rational() {
+  numerator_ = 0;
+  denominator_ = 1;
 }
 
-int64_t Rational::GetNumerator() const {
+Rational::Rational(const int32_t &numerator) {
+  numerator_ = numerator;
+  denominator_ = 1;
+}
+
+Rational::Rational(int32_t numerator, int32_t denominator) {
+  numerator_ = numerator;
+  denominator_ = denominator;
+  Reduction();
+}
+
+const int32_t &Rational::GetNumerator() const {
   return numerator_;
 }
 
-void Rational::SetDenominator(int64_t y) {
-  if (y == 0) {
-    throw RationalDivisionByZero{};
-  }
-  denominator_ = y;
-  Normalize();
+const int32_t &Rational::GetDenominator() const {
+  return denominator_;
 }
 
-void Rational::SetNumerator(int64_t x) {
-  numerator_ = x;
-  Normalize();
+void Rational::SetNumerator(const int32_t &numerator) {
+  numerator_ = numerator;
+  Reduction();
 }
 
-int64_t Gcd(Rational &num) {
-  int64_t x = num.GetNumerator();
-  int64_t y = num.GetDenominator();
-  if (x < 0) {
-    x *= -1;
-  }
-  if (y < 0) {
-    y *= -1;
-  }
-  while (x != 0 && y != 0) {
-    if (x > y) {
-      x = x % y;
-    } else {
-      y = y % x;
-    }
-  }
-  return x + y;
+void Rational::SetDenominator(const int32_t &denominator) {
+  denominator_ = denominator;
+  Reduction();
 }
 
-int64_t Lcm(const Rational &num1, const Rational &num2) {
-  int64_t x = num1.GetDenominator();
-  int64_t y = num2.GetDenominator();
-  Rational temp(x, y);
-  return (x * y) / Gcd(temp);
-}
-
-void Rational::Normalize() {
-  if (denominator_ < 0) {
-    denominator_ *= -1;
-    numerator_ *= -1;
-  }
-  int64_t gcd = Gcd(*this);
-  numerator_ /= gcd;
-  denominator_ /= gcd;
-}
-
-Rational &Rational::operator=(const Rational &other) {
-  numerator_ = other.numerator_;
-  denominator_ = other.denominator_;
-  Normalize();
+Rational &Rational::operator+=(const Rational &second) {
+  int32_t scm = denominator_ * second.denominator_ / Gcd(denominator_, second.denominator_);
+  int32_t denominator1 = scm;
+  int32_t numerator1 = numerator_ * (scm / denominator_) + second.numerator_ * (scm / second.denominator_);
+  denominator_ = denominator1;
+  numerator_ = numerator1;
+  Reduction();
   return *this;
 }
 
-bool operator<(const Rational &num1, const Rational &num2) {
-  int64_t lcm = Lcm(num1, num2);
-  int64_t temp1 = lcm / num1.denominator_;
-  int64_t temp2 = lcm / num2.denominator_;
-  return (num1.numerator_ * temp1 < num2.numerator_ * temp2);
+Rational &Rational::operator-=(const Rational &second) {
+  int32_t scm = denominator_ * second.denominator_ / Gcd(denominator_, second.denominator_);
+  int32_t denominator1 = scm;
+  int32_t numerator1 = numerator_ * (scm / denominator_) - second.numerator_ * (scm / second.denominator_);
+  denominator_ = denominator1;
+  numerator_ = numerator1;
+  Reduction();
+  return *this;
 }
 
-bool operator==(const Rational &num1, const Rational &num2) {
-  return (!(num1 < num2) && !(num2 < num1));
+Rational &Rational::operator*=(const Rational &second) {
+  int32_t denominator1 = denominator_ * second.denominator_;
+  int32_t numerator1 = numerator_ * second.numerator_;
+  denominator_ = denominator1;
+  numerator_ = numerator1;
+  Reduction();
+  return *this;
 }
 
-bool operator!=(const Rational &num1, const Rational &num2) {
-  return ((num1 < num2) || (num2 < num1));
-}
-
-bool operator>(const Rational &num1, const Rational &num2) {
-  return (num2 < num1);
-}
-
-bool operator<=(const Rational &num1, const Rational &num2) {
-  return (!(num2 < num1));
-}
-
-bool operator>=(const Rational &num1, const Rational &num2) {
-  return (!(num1 < num2));
-}
-
-Rational &operator+=(Rational &num1, const Rational &num2) {
-  int64_t lcm = Lcm(num1, num2);
-  int64_t temp1 = lcm / num1.denominator_;
-  int64_t temp2 = lcm / num2.denominator_;
-  num1.denominator_ = lcm;
-  num1.numerator_ *= temp1;
-  num1.numerator_ += num2.numerator_ * temp2;
-  num1.Normalize();
-  return num1;
-}
-
-Rational &operator-=(Rational &num1, const Rational &num2) {
-  num1 += (-num2);
-  return num1;
-}
-
-Rational &operator*=(Rational &num1, const Rational &num2) {
-  num1.numerator_ *= num2.numerator_;
-  num1.denominator_ *= num2.denominator_;
-  num1.Normalize();
-  return num1;
-}
-
-Rational &operator/=(Rational &num1, const Rational &num2) {
-  if (num2.GetDenominator() == 0) {
+Rational &Rational::operator/=(const Rational &second) {
+  int32_t denominator1 = denominator_ * second.numerator_;
+  int32_t numerator1 = numerator_ * second.denominator_;
+  if (denominator1 == 0 || second.denominator_ == 0) {
     throw RationalDivisionByZero{};
   }
-  Rational temp(num2.GetDenominator(), num2.GetNumerator());
-  num1 *= temp;
-  num1.Normalize();
-  return num1;
+  denominator_ = denominator1;
+  numerator_ = numerator1;
+  Reduction();
+  return *this;
 }
 
-Rational operator+(const Rational &num1, const Rational &num2) {
-  Rational res_num = num1;
-  res_num += num2;
-  res_num.Normalize();
-  return res_num;
+Rational Rational::operator+(const Rational &second) const {
+  int32_t scm = denominator_ * second.denominator_ / Gcd(denominator_, second.denominator_);
+  int32_t denominator1 = scm;
+  int32_t numerator1 = numerator_ * (scm / denominator_) + second.numerator_ * (scm / second.denominator_);
+  return Rational(numerator1, denominator1);
 }
 
-Rational operator-(const Rational &num1, const Rational &num2) {
-  Rational res_num = num1;
-  res_num -= num2;
-  res_num.Normalize();
-  return res_num;
+Rational Rational::operator-(const Rational &second) const {
+  int32_t scm = denominator_ * second.denominator_ / Gcd(denominator_, second.denominator_);
+  int32_t denominator1 = scm;
+  int32_t numerator1 = numerator_ * (scm / denominator_) - second.numerator_ * (scm / second.denominator_);
+  return Rational(numerator1, denominator1);
 }
 
-Rational operator*(const Rational &num1, const Rational &num2) {
-  Rational res_num = num1;
-  res_num *= num2;
-  res_num.Normalize();
-  return res_num;
+Rational Rational::operator*(const Rational &second) const {
+  int32_t denominator1 = denominator_ * second.denominator_;
+  int32_t numerator1 = numerator_ * second.numerator_;
+  return Rational(numerator1, denominator1);
 }
 
-Rational operator/(const Rational &num1, const Rational &num2) {
-  if (num2.GetNumerator() == 0) {
+Rational Rational::operator/(const Rational &second) const {
+  int32_t denominator1 = denominator_ * second.numerator_;
+  int32_t numerator1 = numerator_ * second.denominator_;
+  if (denominator1 == 0 || second.denominator_ == 0) {
     throw RationalDivisionByZero{};
   }
-  Rational res_num = num1;
-  res_num /= num2;
-  res_num.Normalize();
-  return res_num;
+  return Rational(numerator1, denominator1);
 }
 
-Rational operator+(const Rational &num1) {
-  Rational temp = num1;
-  return temp;
+Rational Rational::operator+() const {
+  return Rational(numerator_, denominator_);
 }
 
-Rational operator-(const Rational &num1) {
-  Rational temp = num1;
-  temp.numerator_ = -temp.numerator_;
-  return temp;
+Rational Rational::operator-() const {
+  return Rational(-numerator_, denominator_);
 }
 
-Rational &operator++(Rational &num1) {
-  num1 += 1;
-  num1.Normalize();
-  return num1;
+Rational &Rational::operator++() {
+  numerator_ += denominator_;
+  return *this;
 }
 
-Rational &operator--(Rational &num1) {
-  Rational temp = 1;
-  num1 -= temp;
-  num1.Normalize();
-  return num1;
+Rational Rational::operator++(int) {
+  auto old_value = *this;
+  numerator_ += denominator_;
+  return old_value;
 }
 
-Rational operator++(Rational &num1, int) {
-  Rational old = num1;
-  num1 += 1;
-  num1.Normalize();
-  return old;
+Rational &Rational::operator--() {
+  numerator_ -= denominator_;
+  return *this;
 }
 
-Rational operator--(Rational &num1, int) {
-  Rational old = num1;
-  num1 -= 1;
-  num1.Normalize();
-  return old;
+Rational Rational::operator--(int) {
+  auto old_value = *this;
+  numerator_ -= denominator_;
+  return old_value;
 }
 
-std::ostream &operator<<(std::ostream &os, const Rational &value) {
-  Rational temp = value;
-  if (value.denominator_ == 0) {
+bool Rational::operator<(const Rational &second) const {
+  return numerator_ * second.denominator_ < denominator_ * second.numerator_;
+}
+
+bool Rational::operator>(const Rational &second) const {
+  return numerator_ * second.denominator_ > denominator_ * second.numerator_;
+}
+
+bool Rational::operator<=(const Rational &second) const {
+  return numerator_ * second.denominator_ <= denominator_ * second.numerator_;
+}
+
+bool Rational::operator>=(const Rational &second) const {
+  return numerator_ * second.denominator_ >= denominator_ * second.numerator_;
+}
+
+bool Rational::operator==(const Rational &second) const {
+  int sign = 1;
+  if (denominator_ == 0) {
     throw RationalDivisionByZero{};
   }
-  temp.Normalize();
-  if (temp.denominator_ != 1) {
-    os << temp.numerator_ << '/' << temp.denominator_;
+  if (numerator_ * denominator_ < 0) {
+    sign = -1;
+  }
+  int32_t gcd = Gcd(abs(numerator_), abs(denominator_));
+  int32_t numerator1 = sign * abs(numerator_) / gcd;
+  int32_t denominator1 = abs(denominator_) / gcd;
+  if (second.numerator_ * second.denominator_ <= 0) {
+    sign = -1;
   } else {
-    os << temp.numerator_;
+    sign = 1;
+  }
+  gcd = Gcd(abs(second.numerator_), abs(second.denominator_));
+  int32_t numerator2 = sign * abs(second.numerator_) / gcd;
+  int32_t denominator2 = abs(second.denominator_) / gcd;
+  return numerator1 == numerator2 && denominator1 == denominator2;
+}
+
+bool Rational::operator!=(const Rational &second) const {
+  return !(second == *this);
+}
+
+std::ostream &operator<<(std::ostream &os, const Rational &second) {
+  int sign = 1;
+  if (second.numerator_ * second.denominator_ <= 0) {
+    sign = -1;
+  }
+  int32_t gcd = Gcd(abs(second.numerator_), abs(second.denominator_));
+  int32_t numerator1 = sign * abs(second.numerator_) / gcd;
+  int32_t denominator1 = abs(second.denominator_) / gcd;
+  if (denominator1 == 1) {
+    os << numerator1;
+  } else {
+    os << numerator1 << '/' << denominator1;
   }
   return os;
 }
 
-std::istream &operator>>(std::istream &is, Rational &value) {
-  char a = '/';
-  int64_t temp_n = 0;
-  int64_t temp_d = 1;
-  Rational temp = 0;
-  is >> temp_n;
-  if (a == is.peek()) {
-    is >> a >> temp_d;
-    if (temp_d == 0) {
-      throw RationalDivisionByZero{};
-    }
-    temp.SetNumerator(temp_n);
-    temp.SetDenominator(temp_d);
+std::istream &operator>>(std::istream &is, Rational &second) {
+  char symbol;
+  is >> second.numerator_;
+  if (is.peek() == '/') {
+    is >> symbol >> second.denominator_;
   } else {
-    temp.SetNumerator(temp_n);
-    temp.denominator_ = 1;
+    second.denominator_ = 1;
   }
-  value = temp;
+  second.Reduction();
   return is;
+}
+
+bool operator<(const int32_t &first, const Rational &second) {
+  Rational obj = first;
+  return obj < second;
+}
+
+bool operator>(const int &first, const Rational &second) {
+  Rational obj = first;
+  return obj > second;
+}
+
+bool operator>=(const int &first, const Rational &second) {
+  Rational obj = first;
+  return obj >= second;
+}
+
+bool operator<=(const int &first, const Rational &second) {
+  Rational obj = first;
+  return obj <= second;
+}
+
+bool operator==(const int &first, const Rational &second) {
+  Rational obj = first;
+  return obj == second;
+}
+
+bool operator!=(const int &first, const Rational &second) {
+  Rational obj = first;
+  return obj != second;
+}
+
+bool operator>(const Rational &first, const int &second) {
+  Rational obj = second;
+  return first > obj;
+}
+
+bool operator<(const Rational &first, const int &second) {
+  Rational obj = second;
+  return first < obj;
+}
+
+bool operator>=(const Rational &first, const int &second) {
+  Rational obj = second;
+  return first >= obj;
+}
+
+bool operator<=(const Rational &first, const int &second) {
+  Rational obj = second;
+  return first <= obj;
+}
+
+bool operator==(const Rational &first, const int &second) {
+  Rational obj = second;
+  return first == obj;
+}
+
+bool operator!=(const Rational &first, const int &second) {
+  Rational obj = second;
+  return first != obj;
 }
