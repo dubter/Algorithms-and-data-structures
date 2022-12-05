@@ -68,7 +68,7 @@ class Graph {
   std::pair<int, int> ReturnEdges(int ver_first, int ver_second) const;
 
  private:
-  std::vector<Edge> graph_;
+  std::vector<Edge> adjacency_list_;
   int size_;
   DSU sets_;
   const int max_weight_ = 1000000001;
@@ -79,7 +79,7 @@ int64_t Graph::Boruvka() {
   std::map<std::pair<int, int>, int> mst;
   while (sets_.SetCount() > 1) {
     std::vector<Edge> min_edges(size_, {-1, -1, max_weight_});
-    for (auto &edge : graph_) {
+    for (auto &edge : adjacency_list_) {
       int component_u = sets_.FindSet(edge.from);
       int component_v = sets_.FindSet(edge.to);
       if (component_u != component_v) {
@@ -113,7 +113,7 @@ std::pair<int, int> Graph::ReturnEdges(int ver_first, int ver_second) const {
 
 void Graph::InsertNoOrientEdge(int from, int to, int cap) {
   Edge edg = {from, to, cap};
-  graph_.push_back(edg);
+  adjacency_list_.push_back(edg);
 }
 
 int main() {

@@ -17,7 +17,7 @@ enum COLOR {
 class Graph {
  public:
   explicit Graph(size_t size) {
-    vertexes_.resize(size);
+    adjacency_list_.resize(size);
     colors_.resize(size, WHITE);
   }
   void PrintCycle() const {
@@ -32,7 +32,7 @@ class Graph {
   }
 
   void InsertEdgeOrient(size_t ver_first, size_t ver_second) {
-    vertexes_[ver_first].push_back(ver_second);
+    adjacency_list_[ver_first].push_back(ver_second);
   }
 
   void Dfs(size_t ver) {
@@ -41,7 +41,7 @@ class Graph {
     }
     colors_[ver] = GREY;
     cycle_.push_back(ver);
-    for (auto u : vertexes_[ver]) {
+    for (auto u : adjacency_list_[ver]) {
       if (colors_[u] == WHITE) {
         Dfs(u);
       } else if (colors_[u] == GREY) {
@@ -72,7 +72,7 @@ class Graph {
  private:
   bool is_cycle_ = false;
   std::vector<COLOR> colors_;
-  std::vector<std::vector<size_t>> vertexes_;
+  std::vector<std::vector<size_t>> adjacency_list_;
   std::vector<size_t> cycle_;
 };
 

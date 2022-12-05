@@ -13,41 +13,41 @@
 class Graph {
  public:
   explicit Graph(size_t size) {
-    vertexes_.resize(size);
+    adjacency_list_.resize(size);
     parent_.resize(size);
-    dist_.resize(size, max_dist_);
+    distance_.resize(size, max_dist_);
   }
   void BFS(int ver) {
     std::queue<int> queue;
     int parent;
     queue.push(ver);
-    dist_[ver] = 0;
+    distance_[ver] = 0;
     parent_[ver] = -1;
     while (!queue.empty()) {
       parent = queue.front();
       queue.pop();
-      for (size_t i = 0; i < vertexes_[parent].size(); ++i) {
-        if (dist_[vertexes_[parent][i]] == max_dist_) {
-          dist_[vertexes_[parent][i]] = dist_[parent] + 1;
-          parent_[vertexes_[parent][i]] = parent;
-          queue.push(vertexes_[parent][i]);
+      for (size_t i = 0; i < adjacency_list_[parent].size(); ++i) {
+        if (distance_[adjacency_list_[parent][i]] == max_dist_) {
+          distance_[adjacency_list_[parent][i]] = distance_[parent] + 1;
+          parent_[adjacency_list_[parent][i]] = parent;
+          queue.push(adjacency_list_[parent][i]);
         }
       }
     }
   }
 
   void AddUndirectedEdge(size_t first, size_t second) {
-    if (std::find(vertexes_[first].begin(), vertexes_[first].end(), second) == vertexes_[first].end()) {
-      vertexes_[first].push_back(second);
-      vertexes_[second].push_back(first);
+    if (std::find(adjacency_list_[first].begin(), adjacency_list_[first].end(), second) == adjacency_list_[first].end()) {
+      adjacency_list_[first].push_back(second);
+      adjacency_list_[second].push_back(first);
     }
   }
 
   int GetTheSmallestDistance(int ver) {
-    if (dist_[ver] == max_dist_) {
+    if (distance_[ver] == max_dist_) {
       return -1;
     }
-    return dist_[ver];
+    return distance_[ver];
   }
 
   void PrintWay(int ver) {
@@ -60,9 +60,9 @@ class Graph {
   }
 
  private:
-  std::vector<std::vector<size_t>> vertexes_;
+  std::vector<std::vector<size_t>> adjacency_list_;
   std::vector<int> parent_;
-  std::vector<int> dist_;
+  std::vector<int> distance_;
   const int max_dist_ = 500001;
 };
 

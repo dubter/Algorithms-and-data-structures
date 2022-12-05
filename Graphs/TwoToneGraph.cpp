@@ -18,15 +18,15 @@ enum COLOR {
 
 class Graph {
  public:
-  explicit Graph(int size) : vertexes_(size), colors_(size, WHITE), tones_(size){};
+  explicit Graph(int size) : adjacency_list_(size), colors_(size, WHITE), tones_(size){};
 
   void InsertEdgeNoOrient(int ver_first, int ver_second) {
-    if (std::find(vertexes_[ver_second].begin(), vertexes_[ver_second].end(), ver_first) ==
-        vertexes_[ver_second].end()) {
-      vertexes_[ver_second].push_back(ver_first);
+    if (std::find(adjacency_list_[ver_second].begin(), adjacency_list_[ver_second].end(), ver_first) ==
+        adjacency_list_[ver_second].end()) {
+      adjacency_list_[ver_second].push_back(ver_first);
     }
-    if (std::find(vertexes_[ver_first].begin(), vertexes_[ver_first].end(), ver_second) == vertexes_[ver_first].end()) {
-      vertexes_[ver_first].push_back(ver_second);
+    if (std::find(adjacency_list_[ver_first].begin(), adjacency_list_[ver_first].end(), ver_second) == adjacency_list_[ver_first].end()) {
+      adjacency_list_[ver_first].push_back(ver_second);
     }
   }
 
@@ -37,7 +37,7 @@ class Graph {
   void Dfs(int ver, int tone) {
     colors_[ver] = GREY;
     tones_[ver] = tone;
-    for (auto u : vertexes_[ver]) {
+    for (auto u : adjacency_list_[ver]) {
       if (colors_[u] == WHITE) {
         Dfs(u, -tone);
       } else if (tones_[ver] == tones_[u]) {
@@ -49,7 +49,7 @@ class Graph {
   }
 
   void IsAbleTwoTones() {
-    for (int i = 0; i < static_cast<int>(vertexes_.size()); ++i) {
+    for (int i = 0; i < static_cast<int>(adjacency_list_.size()); ++i) {
       if (colors_[i] == WHITE) {
         Dfs(i, 1);
       }
@@ -57,7 +57,7 @@ class Graph {
   }
 
  private:
-  std::vector<std::vector<int>> vertexes_;
+  std::vector<std::vector<int>> adjacency_list_;
   std::vector<COLOR> colors_;
   std::vector<int> tones_;
   bool is_able_two_tone_ = true;

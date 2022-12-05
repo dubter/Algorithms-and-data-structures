@@ -20,7 +20,7 @@ enum COLOUR {
 
 class Graph {
  private:
-  std::vector<std::vector<size_t>> vertexes_;
+  std::vector<std::vector<size_t>> adjacency_list_;
   std::vector<COLOUR> colors_;
   std::vector<size_t> deg_in_;
   std::vector<size_t> deg_out_;
@@ -30,11 +30,11 @@ class Graph {
   size_t ver_start_ = 100001;
 
  public:
-  explicit Graph(size_t size) : vertexes_(size), colors_(size, WHITE), deg_in_(size, 0), deg_out_(size, 0){};
+  explicit Graph(size_t size) : adjacency_list_(size), colors_(size, WHITE), deg_in_(size, 0), deg_out_(size, 0){};
 
   bool IsEulerGraph() {
-    for (size_t i = 0; i < vertexes_.size(); ++i) {
-      if (!vertexes_[i].empty() && ver_start_ == 100001) {
+    for (size_t i = 0; i < adjacency_list_.size(); ++i) {
+      if (!adjacency_list_[i].empty() && ver_start_ == 100001) {
         ver_start_ = i;
       }
       if (deg_in_[i] != deg_out_[i]) {
@@ -45,8 +45,8 @@ class Graph {
       return false;
     }
     DFS(ver_start_);
-    for (size_t i = 0; i < vertexes_.size(); ++i) {
-      if (!vertexes_[i].empty() && colors_[i] == WHITE) {
+    for (size_t i = 0; i < adjacency_list_.size(); ++i) {
+      if (!adjacency_list_[i].empty() && colors_[i] == WHITE) {
         return false;
       }
     }
@@ -59,7 +59,7 @@ class Graph {
     while (!stack.empty()) {
       size_t ver = stack.top();
       bool found_edge = false;
-      for (auto &neighbour : vertexes_[ver]) {
+      for (auto &neighbour : adjacency_list_[ver]) {
         std::pair<size_t, size_t> pair_ver = std::make_pair(ver, neighbour);
         if (count_each_edge_.find(pair_ver) != count_each_edge_.end() && count_each_edge_[pair_ver] != 0) {
           stack.push(neighbour);
@@ -86,7 +86,7 @@ class Graph {
     if (edges_.find(pair_ver) != edges_.end()) {
       ++count_each_edge_[pair_ver];
     } else {
-      vertexes_[ver_first].push_back(ver_second);
+      adjacency_list_[ver_first].push_back(ver_second);
       edges_.insert(pair_ver);
       count_each_edge_[pair_ver] = 1;
     }
@@ -94,7 +94,7 @@ class Graph {
 
   void DFS(size_t ver) {
     colors_[ver] = GREY;
-    for (auto u : vertexes_[ver]) {
+    for (auto u : adjacency_list_[ver]) {
       if (colors_[u] == WHITE) {
         DFS(u);
       }

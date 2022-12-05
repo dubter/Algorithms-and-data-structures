@@ -9,8 +9,18 @@
 
 #include <iostream>
 #include <vector>
-#include <map>
 #include <algorithm>
+
+class Edge {
+ public:
+  size_t first_ver_;
+  size_t second_ver_;
+  size_t weight_;
+  Edge() = default;
+  Edge(size_t first_ver, size_t second_ver, size_t weight)
+      : first_ver_(first_ver), second_ver_(second_ver), weight_(weight) {
+  }
+};
 
 class Heap {
  private:
@@ -64,34 +74,20 @@ class Heap {
 
 class Graph {
  public:
-  explicit Graph(size_t size) : vertexes_(size) {
+  explicit Graph(size_t size) : adj_list_(size), dist_(size, max_dist_) {
   }
 
-  std::pair<size_t, size_t> ReturnEdge(size_t first_ver, size_t second_ver) const {
-    if (first_ver > second_ver) {
-      return std::make_pair(second_ver, first_ver);
-    }
-    return std::make_pair(first_ver, second_ver);
-  }
-
-  void AddNoOrientEdge(size_t first_ver, size_t second_ver, size_t value) {
-    if (weight_of_edges_.find(ReturnEdge(first_ver, second_ver)) == weight_of_edges_.end()) {
-      vertexes_[first_ver].push_back(second_ver);
-      vertexes_[second_ver].push_back(first_ver);
-      weight_of_edges_[ReturnEdge(first_ver, second_ver)] = value;
-    } else {
-      weight_of_edges_[ReturnEdge(first_ver, second_ver)] =
-          std::min(weight_of_edges_[ReturnEdge(first_ver, second_ver)], value);
-    }
+  void AddNoOrientEdge(size_t first_ver, size_t second_ver, size_t weight) {
+    adj_list_[first_ver].emplace_back(first_ver, second_ver, weight);
+    adj_list_[second_ver].emplace_back(second_ver, first_ver, weight);
   }
 
   void Dijkstra(size_t ver) {
-    dist_.resize(vertexes_.size(), max_dist_);
     dist_[ver] = 0;
-    std::vector<int> prev(vertexes_.size(), -1);
-    std::vector<bool> used(vertexes_.size(), false);
+    std::vector<int> prev(adj_list_.size(), -1);
+    std::vector<bool> used(adj_list_.size(), false);
     Heap heap;
-    for (size_t i = 0; i < vertexes_.size(); ++i) {
+    for (size_t i = 0; i < adj_list_.size(); ++i) {
       heap.Insert(std::make_pair(dist_[i], i));
     }
     std::pair<size_t, size_t> pair;
@@ -101,11 +97,11 @@ class Graph {
         continue;
       }
       used[pair.second] = true;
-      for (auto &u : vertexes_[pair.second]) {
-        if (!used[u] && weight_of_edges_[ReturnEdge(u, pair.second)] + dist_[pair.second] < dist_[u]) {
-          prev[u] = static_cast<int>(pair.second);
-          dist_[u] = weight_of_edges_[ReturnEdge(u, pair.second)] + dist_[pair.second];
-          heap.Insert(std::make_pair(dist_[u], u));
+      for (auto &u : adj_list_[pair.second]) {
+        if (!used[u.second_ver_] && u.weight_ + dist_[pair.second] < dist_[u.second_ver_]) {
+          prev[u.second_ver_] = static_cast<int>(pair.second);
+          dist_[u.second_ver_] = u.weight_ + dist_[pair.second];
+          heap.Insert(std::make_pair(dist_[u.second_ver_], u.second_ver_));
         }
       }
     }
@@ -119,11 +115,9 @@ class Graph {
   }
 
  private:
-  std::vector<std::vector<size_t>> vertexes_;
-  std::vector<size_t> dist_;
-  std::map<std::pair<size_t, size_t>, size_t> weight_of_edges_;
-  std::vector<std::pair<size_t, size_t>> min_ost_tree_;
   const size_t max_dist_ = 2009000999;
+  std::vector<std::vector<Edge>> adj_list_;
+  std::vector<size_t> dist_;
 };
 
 int main() {

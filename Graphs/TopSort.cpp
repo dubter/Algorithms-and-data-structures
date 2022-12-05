@@ -13,7 +13,7 @@ enum COLOUR { WHITE, GRAY, BLACK };
 class Graph {
  private:
   std::vector<COLOUR> colours_;
-  std::vector<std::vector<size_t>> vertexes_;
+  std::vector<std::vector<size_t>> adjacency_list_;
   std::vector<size_t> sorted_arr_;
   size_t count_;
   bool is_able_to_sort_ = true;
@@ -21,7 +21,7 @@ class Graph {
  private:
   void DFS(size_t ver) {
     colours_[ver] = GRAY;
-    for (size_t neighbour : vertexes_[ver]) {
+    for (size_t neighbour : adjacency_list_[ver]) {
       if (colours_[neighbour] == WHITE) {
         DFS(neighbour);
       } else if (colours_[neighbour] == GRAY) {
@@ -34,15 +34,15 @@ class Graph {
   }
 
  public:
-  explicit Graph(size_t size) : colours_(size, WHITE), vertexes_(size), sorted_arr_(size), count_(size - 1) {
+  explicit Graph(size_t size) : colours_(size, WHITE), adjacency_list_(size), sorted_arr_(size), count_(size - 1) {
   }
 
   void AddOrientEdge(size_t ver1, size_t ver2) {
-    vertexes_[ver1].push_back(ver2);
+    adjacency_list_[ver1].push_back(ver2);
   }
 
   void BypassGraph() {
-    for (size_t i = 0; i < vertexes_.size(); ++i) {
+    for (size_t i = 0; i < adjacency_list_.size(); ++i) {
       if (colours_[i] == WHITE) {
         DFS(i);
       }

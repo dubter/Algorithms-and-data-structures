@@ -22,9 +22,9 @@ class Edge {
 
 class Graph {
  private:
-  std::vector<size_t> distance_;
+  std::vector<int> distance_;
   std::vector<Edge> edges_;
-  const size_t max_dist_ = 30000;
+  const int max_dist_ = 30000;
 
  public:
   explicit Graph(size_t size) : distance_(size, 30000) {

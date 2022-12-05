@@ -62,12 +62,12 @@ class Heap {
 
 class Graph {
  private:
-  std::vector<std::vector<size_t>> vertexes_;
+  std::vector<std::vector<size_t>> adjacency_list_;
   std::map<std::pair<size_t, size_t>, size_t> weight_of_edges_;
   std::vector<std::pair<size_t, size_t>> min_ost_tree_;
 
  public:
-  explicit Graph(size_t size) : vertexes_(size) {
+  explicit Graph(size_t size) : adjacency_list_(size) {
   }
 
   std::pair<size_t, size_t> ReturnEdge(size_t first_ver, size_t second_ver) const {
@@ -79,8 +79,8 @@ class Graph {
 
   void AddNoOrientEdge(size_t first_ver, size_t second_ver, size_t value) {
     if (weight_of_edges_.find(ReturnEdge(first_ver, second_ver)) == weight_of_edges_.end()) {
-      vertexes_[first_ver].push_back(second_ver);
-      vertexes_[second_ver].push_back(first_ver);
+      adjacency_list_[first_ver].push_back(second_ver);
+      adjacency_list_[second_ver].push_back(first_ver);
       weight_of_edges_[ReturnEdge(first_ver, second_ver)] = value;
     } else {
       weight_of_edges_[ReturnEdge(first_ver, second_ver)] =
@@ -91,12 +91,12 @@ class Graph {
   size_t Prim() {
     size_t weight_of_min_ost = 0;
     const size_t max_weight = 100001;
-    std::vector<size_t> dist(vertexes_.size(), max_weight);
+    std::vector<size_t> dist(adjacency_list_.size(), max_weight);
     dist[0] = 0;
-    std::vector<int> prev(vertexes_.size(), -1);
-    std::vector<bool> used(vertexes_.size(), false);
+    std::vector<int> prev(adjacency_list_.size(), -1);
+    std::vector<bool> used(adjacency_list_.size(), false);
     Heap heap;
-    for (size_t i = 0; i < vertexes_.size(); ++i) {
+    for (size_t i = 0; i < adjacency_list_.size(); ++i) {
       heap.Insert(std::make_pair(dist[i], i));
     }
     std::pair<size_t, size_t> pair;
@@ -109,7 +109,7 @@ class Graph {
       if (prev[pair.second] != -1) {
         min_ost_tree_.push_back(ReturnEdge(prev[pair.second], pair.second));
       }
-      for (auto &u : vertexes_[pair.second]) {
+      for (auto &u : adjacency_list_[pair.second]) {
         if (!used[u] && weight_of_edges_[ReturnEdge(u, pair.second)] < dist[u]) {
           prev[u] = static_cast<int>(pair.second);
           dist[u] = weight_of_edges_[ReturnEdge(u, pair.second)];

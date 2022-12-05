@@ -366,6 +366,26 @@
 },
 {
   "directory": "/home/rodion/CLionProjects/algorithms_and_data_structures/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/rodion/CLionProjects/algorithms_and_data_structures/.  -fsanitize=address,undefined -Wall -Wextra -pedantic -Werror -Wno-self-assign-overloaded -Wno-missing-braces -g -std=gnu++17 -o CMakeFiles/Johnson.dir/Graphs/Johnson.cpp.o -c /home/rodion/CLionProjects/algorithms_and_data_structures/Graphs/Johnson.cpp",
+  "file": "/home/rodion/CLionProjects/algorithms_and_data_structures/Graphs/Johnson.cpp"
+},
+{
+  "directory": "/home/rodion/CLionProjects/algorithms_and_data_structures/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/rodion/CLionProjects/algorithms_and_data_structures/.  -fsanitize=address,undefined -Wall -Wextra -pedantic -Werror -Wno-self-assign-overloaded -Wno-missing-braces -g -std=gnu++17 -o CMakeFiles/FordFalkerson.dir/Graphs/FordFalkerson.cpp.o -c /home/rodion/CLionProjects/algorithms_and_data_structures/Graphs/FordFalkerson.cpp",
+  "file": "/home/rodion/CLionProjects/algorithms_and_data_structures/Graphs/FordFalkerson.cpp"
+},
+{
+  "directory": "/home/rodion/CLionProjects/algorithms_and_data_structures/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/rodion/CLionProjects/algorithms_and_data_structures/.  -fsanitize=address,undefined -Wall -Wextra -pedantic -Werror -Wno-self-assign-overloaded -Wno-missing-braces -g -std=gnu++17 -o CMakeFiles/DSU.dir/Graphs/DSU.cpp.o -c /home/rodion/CLionProjects/algorithms_and_data_structures/Graphs/DSU.cpp",
+  "file": "/home/rodion/CLionProjects/algorithms_and_data_structures/Graphs/DSU.cpp"
+},
+{
+  "directory": "/home/rodion/CLionProjects/algorithms_and_data_structures/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/rodion/CLionProjects/algorithms_and_data_structures/.  -fsanitize=address,undefined -Wall -Wextra -pedantic -Werror -Wno-self-assign-overloaded -Wno-missing-braces -g -std=gnu++17 -o CMakeFiles/MinDistanceWithLimits.dir/Graphs/MinDistanceWithLimits.cpp.o -c /home/rodion/CLionProjects/algorithms_and_data_structures/Graphs/MinDistanceWithLimits.cpp",
+  "file": "/home/rodion/CLionProjects/algorithms_and_data_structures/Graphs/MinDistanceWithLimits.cpp"
+},
+{
+  "directory": "/home/rodion/CLionProjects/algorithms_and_data_structures/cmake-build-debug",
   "command": "/usr/bin/c++ -I/home/rodion/CLionProjects/algorithms_and_data_structures/.  -fsanitize=address,undefined -Wall -Wextra -pedantic -Werror -Wno-self-assign-overloaded -Wno-missing-braces -g -std=gnu++17 -o ClassesFromSTL/gcd/CMakeFiles/gcd_public_test.dir/gcd_public_test.cpp.o -c /home/rodion/CLionProjects/algorithms_and_data_structures/ClassesFromSTL/gcd/gcd_public_test.cpp",
   "file": "/home/rodion/CLionProjects/algorithms_and_data_structures/ClassesFromSTL/gcd/gcd_public_test.cpp"
 },

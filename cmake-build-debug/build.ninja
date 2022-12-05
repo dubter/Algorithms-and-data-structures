@@ -2376,6 +2376,134 @@ build FLoydWarshall: CXX_EXECUTABLE_LINKER__FLoydWarshall_Debug CMakeFiles/FLoyd
   TARGET_FILE = FLoydWarshall
   TARGET_PDB = FLoydWarshall.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target Johnson
+
+
+#############################################
+# Order-only phony target for Johnson
+
+build cmake_object_order_depends_target_Johnson: phony || CMakeFiles/Johnson.dir
+
+build CMakeFiles/Johnson.dir/Graphs/Johnson.cpp.o: CXX_COMPILER__Johnson_Debug /home/rodion/CLionProjects/algorithms_and_data_structures/Graphs/Johnson.cpp || cmake_object_order_depends_target_Johnson
+  DEP_FILE = CMakeFiles/Johnson.dir/Graphs/Johnson.cpp.o.d
+  FLAGS = -fsanitize=address,undefined -Wall -Wextra -pedantic -Werror -Wno-self-assign-overloaded -Wno-missing-braces -g -std=gnu++17
+  INCLUDES = -I/home/rodion/CLionProjects/algorithms_and_data_structures/.
+  OBJECT_DIR = CMakeFiles/Johnson.dir
+  OBJECT_FILE_DIR = CMakeFiles/Johnson.dir/Graphs
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target Johnson
+
+
+#############################################
+# Link the executable Johnson
+
+build Johnson: CXX_EXECUTABLE_LINKER__Johnson_Debug CMakeFiles/Johnson.dir/Graphs/Johnson.cpp.o
+  FLAGS = -fsanitize=address,undefined -Wall -Wextra -pedantic -Werror -Wno-self-assign-overloaded -Wno-missing-braces -g
+  OBJECT_DIR = CMakeFiles/Johnson.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = Johnson
+  TARGET_PDB = Johnson.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target FordFalkerson
+
+
+#############################################
+# Order-only phony target for FordFalkerson
+
+build cmake_object_order_depends_target_FordFalkerson: phony || CMakeFiles/FordFalkerson.dir
+
+build CMakeFiles/FordFalkerson.dir/Graphs/FordFalkerson.cpp.o: CXX_COMPILER__FordFalkerson_Debug /home/rodion/CLionProjects/algorithms_and_data_structures/Graphs/FordFalkerson.cpp || cmake_object_order_depends_target_FordFalkerson
+  DEP_FILE = CMakeFiles/FordFalkerson.dir/Graphs/FordFalkerson.cpp.o.d
+  FLAGS = -fsanitize=address,undefined -Wall -Wextra -pedantic -Werror -Wno-self-assign-overloaded -Wno-missing-braces -g -std=gnu++17
+  INCLUDES = -I/home/rodion/CLionProjects/algorithms_and_data_structures/.
+  OBJECT_DIR = CMakeFiles/FordFalkerson.dir
+  OBJECT_FILE_DIR = CMakeFiles/FordFalkerson.dir/Graphs
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target FordFalkerson
+
+
+#############################################
+# Link the executable FordFalkerson
+
+build FordFalkerson: CXX_EXECUTABLE_LINKER__FordFalkerson_Debug CMakeFiles/FordFalkerson.dir/Graphs/FordFalkerson.cpp.o
+  FLAGS = -fsanitize=address,undefined -Wall -Wextra -pedantic -Werror -Wno-self-assign-overloaded -Wno-missing-braces -g
+  OBJECT_DIR = CMakeFiles/FordFalkerson.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = FordFalkerson
+  TARGET_PDB = FordFalkerson.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target DSU
+
+
+#############################################
+# Order-only phony target for DSU
+
+build cmake_object_order_depends_target_DSU: phony || CMakeFiles/DSU.dir
+
+build CMakeFiles/DSU.dir/Graphs/DSU.cpp.o: CXX_COMPILER__DSU_Debug /home/rodion/CLionProjects/algorithms_and_data_structures/Graphs/DSU.cpp || cmake_object_order_depends_target_DSU
+  DEP_FILE = CMakeFiles/DSU.dir/Graphs/DSU.cpp.o.d
+  FLAGS = -fsanitize=address,undefined -Wall -Wextra -pedantic -Werror -Wno-self-assign-overloaded -Wno-missing-braces -g -std=gnu++17
+  INCLUDES = -I/home/rodion/CLionProjects/algorithms_and_data_structures/.
+  OBJECT_DIR = CMakeFiles/DSU.dir
+  OBJECT_FILE_DIR = CMakeFiles/DSU.dir/Graphs
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target DSU
+
+
+#############################################
+# Link the executable DSU
+
+build DSU: CXX_EXECUTABLE_LINKER__DSU_Debug CMakeFiles/DSU.dir/Graphs/DSU.cpp.o
+  FLAGS = -fsanitize=address,undefined -Wall -Wextra -pedantic -Werror -Wno-self-assign-overloaded -Wno-missing-braces -g
+  OBJECT_DIR = CMakeFiles/DSU.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = DSU
+  TARGET_PDB = DSU.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target MinDistanceWithLimits
+
+
+#############################################
+# Order-only phony target for MinDistanceWithLimits
+
+build cmake_object_order_depends_target_MinDistanceWithLimits: phony || CMakeFiles/MinDistanceWithLimits.dir
+
+build CMakeFiles/MinDistanceWithLimits.dir/Graphs/MinDistanceWithLimits.cpp.o: CXX_COMPILER__MinDistanceWithLimits_Debug /home/rodion/CLionProjects/algorithms_and_data_structures/Graphs/MinDistanceWithLimits.cpp || cmake_object_order_depends_target_MinDistanceWithLimits
+  DEP_FILE = CMakeFiles/MinDistanceWithLimits.dir/Graphs/MinDistanceWithLimits.cpp.o.d
+  FLAGS = -fsanitize=address,undefined -Wall -Wextra -pedantic -Werror -Wno-self-assign-overloaded -Wno-missing-braces -g -std=gnu++17
+  INCLUDES = -I/home/rodion/CLionProjects/algorithms_and_data_structures/.
+  OBJECT_DIR = CMakeFiles/MinDistanceWithLimits.dir
+  OBJECT_FILE_DIR = CMakeFiles/MinDistanceWithLimits.dir/Graphs
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target MinDistanceWithLimits
+
+
+#############################################
+# Link the executable MinDistanceWithLimits
+
+build MinDistanceWithLimits: CXX_EXECUTABLE_LINKER__MinDistanceWithLimits_Debug CMakeFiles/MinDistanceWithLimits.dir/Graphs/MinDistanceWithLimits.cpp.o
+  FLAGS = -fsanitize=address,undefined -Wall -Wextra -pedantic -Werror -Wno-self-assign-overloaded -Wno-missing-braces -g
+  OBJECT_DIR = CMakeFiles/MinDistanceWithLimits.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = MinDistanceWithLimits
+  TARGET_PDB = MinDistanceWithLimits.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -4202,7 +4330,7 @@ build ClassesFromSTL/geometry/rebuild_cache: phony ClassesFromSTL/geometry/CMake
 #############################################
 # Folder: /home/rodion/CLionProjects/algorithms_and_data_structures/cmake-build-debug
 
-build all: phony QuickSort MergeSort BubbleSort BubbleSortOptimized CountingSort HeapSort InsertSort QuickSortOptimized SelectionSort SelectionSortOptimized InplaceMergeSort BST Splay AVL Deque Stack LevenshteinDistance LCS LIS Fibonacci FastLIS BackPack QueueUsingTwoStacks Heap Comparator Animals Meeting AdjacencyList Dictionary Bank Frequency DataBase ExpensiveCalculator ArrayPrefixSums MaxSum SparseTable FenwickTree FenwickTree3D SegmentTree SegmentTreeWithUpdate SparseTable2D CorrectBracketSequence Treap PrefixFunction FromPrefixFuncToString ZFunction FromZFuncToString KMP NumberDifferentSubstrings Trie AhoCorasick SuffixAutomaton SuffixTree TwoSuffixTrees SuffixMachine BFS TwoToneGraph FindCycle BFSForWeightedGraphs NumberConnectivitiyComponents TopSort Kosaraju ArticulationPoints Bridges EulerPath SumWeightsEdgesOnline Prim Kruskal Boruvka BellmanFord Dijkstra NegativeCycle FLoydWarshall ClassesFromSTL/gcd/all ClassesFromSTL/sum/all ClassesFromSTL/any/all ClassesFromSTL/array/all ClassesFromSTL/big_integer/all ClassesFromSTL/calculator/all ClassesFromSTL/frozen_set/all ClassesFromSTL/inserter/all ClassesFromSTL/itertools/all ClassesFromSTL/matrix/all ClassesFromSTL/move_iterator/all ClassesFromSTL/optional/all ClassesFromSTL/random/all ClassesFromSTL/rational/all ClassesFromSTL/reverse_iterator/all ClassesFromSTL/shared_ptr/all ClassesFromSTL/string/all ClassesFromSTL/string_view/all ClassesFromSTL/unique_ptr/all ClassesFromSTL/unordered_set/all ClassesFromSTL/vector/all ClassesFromSTL/geometry/all
+build all: phony QuickSort MergeSort BubbleSort BubbleSortOptimized CountingSort HeapSort InsertSort QuickSortOptimized SelectionSort SelectionSortOptimized InplaceMergeSort BST Splay AVL Deque Stack LevenshteinDistance LCS LIS Fibonacci FastLIS BackPack QueueUsingTwoStacks Heap Comparator Animals Meeting AdjacencyList Dictionary Bank Frequency DataBase ExpensiveCalculator ArrayPrefixSums MaxSum SparseTable FenwickTree FenwickTree3D SegmentTree SegmentTreeWithUpdate SparseTable2D CorrectBracketSequence Treap PrefixFunction FromPrefixFuncToString ZFunction FromZFuncToString KMP NumberDifferentSubstrings Trie AhoCorasick SuffixAutomaton SuffixTree TwoSuffixTrees SuffixMachine BFS TwoToneGraph FindCycle BFSForWeightedGraphs NumberConnectivitiyComponents TopSort Kosaraju ArticulationPoints Bridges EulerPath SumWeightsEdgesOnline Prim Kruskal Boruvka BellmanFord Dijkstra NegativeCycle FLoydWarshall Johnson FordFalkerson DSU MinDistanceWithLimits ClassesFromSTL/gcd/all ClassesFromSTL/sum/all ClassesFromSTL/any/all ClassesFromSTL/array/all ClassesFromSTL/big_integer/all ClassesFromSTL/calculator/all ClassesFromSTL/frozen_set/all ClassesFromSTL/inserter/all ClassesFromSTL/itertools/all ClassesFromSTL/matrix/all ClassesFromSTL/move_iterator/all ClassesFromSTL/optional/all ClassesFromSTL/random/all ClassesFromSTL/rational/all ClassesFromSTL/reverse_iterator/all ClassesFromSTL/shared_ptr/all ClassesFromSTL/string/all ClassesFromSTL/string_view/all ClassesFromSTL/unique_ptr/all ClassesFromSTL/unordered_set/all ClassesFromSTL/vector/all ClassesFromSTL/geometry/all
 
 # =============================================================================
 

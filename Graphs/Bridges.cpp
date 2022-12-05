@@ -14,7 +14,7 @@ enum COLOURS { WHITE, GRAY, BLACK };
 
 class Graph {
  private:
-  std::vector<std::vector<std::pair<size_t, size_t>>> vertexes_;
+  std::vector<std::vector<std::pair<size_t, size_t>>> adjacency_list_;
   std::vector<std::vector<size_t>> vertexes_without_index_;
   std::vector<COLOURS> colours_;
   std::vector<size_t> time_in_;
@@ -23,12 +23,12 @@ class Graph {
 
  public:
   explicit Graph(size_t size)
-      : vertexes_(size), vertexes_without_index_(size), colours_(size, WHITE), time_in_(size), time_up_(size) {
+      : adjacency_list_(size), vertexes_without_index_(size), colours_(size, WHITE), time_in_(size), time_up_(size) {
   }
 
   void AddNewNoOrientEdge(size_t ver_first, size_t ver_second, size_t index) {
-    vertexes_[ver_second].emplace_back(index, ver_first);
-    vertexes_[ver_first].emplace_back(index, ver_second);
+    adjacency_list_[ver_second].emplace_back(index, ver_first);
+    adjacency_list_[ver_first].emplace_back(index, ver_second);
     vertexes_without_index_[ver_second].push_back(ver_first);
     vertexes_without_index_[ver_first].push_back(ver_second);
   }
@@ -37,7 +37,7 @@ class Graph {
     colours_[ver] = GRAY;
     time_in_[ver] = time_up_[ver] = time++;
     size_t u_ver, u_index_of_edge;
-    for (std::pair u : vertexes_[ver]) {
+    for (std::pair u : adjacency_list_[ver]) {
       u_ver = u.second;
       u_index_of_edge = u.first;
       if (u_ver != static_cast<size_t>(parent) && colours_[u_ver] == GRAY) {
@@ -59,7 +59,7 @@ class Graph {
   }
 
   void CountAllBridges() {
-    for (size_t ver = 0; ver < vertexes_.size(); ++ver) {
+    for (size_t ver = 0; ver < adjacency_list_.size(); ++ver) {
       if (colours_[ver] == WHITE) {
         DFS(ver, 0, -1);
       }

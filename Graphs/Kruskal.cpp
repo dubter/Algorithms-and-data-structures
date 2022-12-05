@@ -60,18 +60,18 @@ struct Edge {
 
 class Graph {
  public:
-  explicit Graph(int size) : graph_(size), sets_(size){};
+  explicit Graph(int size) : adjacency_list_(size), sets_(size){};
   void InsertNoOrientEdge(int from, int to, int cap);
   int64_t Kruskal();
 
  private:
-  std::vector<Edge> graph_;
+  std::vector<Edge> adjacency_list_;
   DSU sets_;
 };
 
 int64_t Graph::Kruskal() {
   int64_t min_weight = 0;
-  for (auto &edge : graph_) {
+  for (auto &edge : adjacency_list_) {
     if (sets_.FindSet(edge.from) != sets_.FindSet(edge.to)) {
       sets_.UnionSets(edge.from, edge.to);
       min_weight += edge.weight;
@@ -82,7 +82,7 @@ int64_t Graph::Kruskal() {
 
 void Graph::InsertNoOrientEdge(int from, int to, int cap) {
   Edge edg = {from, to, cap};
-  graph_.push_back(edg);
+  adjacency_list_.push_back(edg);
 }
 
 int main() {

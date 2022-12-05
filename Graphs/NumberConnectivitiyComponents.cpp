@@ -14,14 +14,14 @@ enum COLOUR { WHITE, GREY, BLACK };
 class Graph {
  private:
   std::vector<COLOUR> colours_;
-  std::vector<std::vector<size_t>> vertexes_;
+  std::vector<std::vector<size_t>> adjacency_list_;
   size_t count_of_connectivity_components_;
   std::vector<std::vector<size_t>> vertexes_in_component_;
 
  private:
   void DFS(size_t ver) {
     colours_[ver] = GREY;
-    for (size_t neighbour : vertexes_[ver]) {
+    for (size_t neighbour : adjacency_list_[ver]) {
       if (colours_[neighbour] == WHITE) {
         DFS(neighbour);
       }
@@ -31,12 +31,12 @@ class Graph {
   }
 
  public:
-  explicit Graph(size_t size) : colours_(size, WHITE), vertexes_(size), count_of_connectivity_components_(0) {
+  explicit Graph(size_t size) : colours_(size, WHITE), adjacency_list_(size), count_of_connectivity_components_(0) {
   }
 
   void AddNoOrientEdge(size_t ver1, size_t ver2) {
-    vertexes_[ver1].push_back(ver2);
-    vertexes_[ver2].push_back(ver1);
+    adjacency_list_[ver1].push_back(ver2);
+    adjacency_list_[ver2].push_back(ver1);
   }
 
   size_t CountOfConnectivityComponents() const {
@@ -44,7 +44,7 @@ class Graph {
   }
 
   void BypassGraph() {
-    for (size_t i = 0; i < vertexes_.size(); ++i) {
+    for (size_t i = 0; i < adjacency_list_.size(); ++i) {
       if (colours_[i] == WHITE) {
         vertexes_in_component_.emplace_back();
         DFS(i);

@@ -15,25 +15,25 @@ enum COLOURS { WHITE, GRAY, BLACK };
 
 class Graph {
  private:
-  std::vector<std::vector<size_t>> vertexes_;
+  std::vector<std::vector<size_t>> adjacency_list_;
   std::vector<COLOURS> colours_;
   std::vector<size_t> time_in_;
   std::vector<size_t> time_up_;
   std::set<size_t> articulation_points_;
 
  public:
-  explicit Graph(size_t size) : vertexes_(size), colours_(size, WHITE), time_in_(size), time_up_(size) {
+  explicit Graph(size_t size) : adjacency_list_(size), colours_(size, WHITE), time_in_(size), time_up_(size) {
   }
 
   void AddNewNoOrientEdge(size_t ver_first, size_t ver_second) {
-    vertexes_[ver_second].push_back(ver_first);
-    vertexes_[ver_first].push_back(ver_second);
+    adjacency_list_[ver_second].push_back(ver_first);
+    adjacency_list_[ver_first].push_back(ver_second);
   }
 
   void DFS(size_t ver, bool is_root, size_t time, size_t amount_of_children) {
     colours_[ver] = GRAY;
     time_in_[ver] = time_up_[ver] = time++;
-    for (size_t u : vertexes_[ver]) {
+    for (size_t u : adjacency_list_[ver]) {
       if (colours_[u] == GRAY) {
         time_up_[ver] = std::min(time_up_[ver], time_in_[u]);
       }
@@ -57,7 +57,7 @@ class Graph {
   }
 
   void CountAllArticulationPoints() {
-    for (size_t ver = 0; ver < vertexes_.size(); ++ver) {
+    for (size_t ver = 0; ver < adjacency_list_.size(); ++ver) {
       if (colours_[ver] == WHITE) {
         DFS(ver, true, 0, 0);
       }

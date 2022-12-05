@@ -13,7 +13,7 @@ enum COLOUR { WHITE, GRAY, BLACK };
 
 class Graph {
  private:
-  std::vector<std::vector<int>> vertexes_;
+  std::vector<std::vector<int>> adjacency_list_;
   std::vector<COLOUR> colours_;
   std::vector<std::vector<int>> transposed_vertexes_;
   std::vector<int> scc_;
@@ -21,17 +21,17 @@ class Graph {
   int count_components_strong_connectivity_ = 0;
 
  public:
-  explicit Graph(int size) : vertexes_(size), colours_(size, WHITE), transposed_vertexes_(size), scc_(size) {
+  explicit Graph(int size) : adjacency_list_(size), colours_(size, WHITE), transposed_vertexes_(size), scc_(size) {
   }
 
   void AddOrientEdge(int first_ver, int second_ver) {
-    vertexes_[first_ver].push_back(second_ver);
+    adjacency_list_[first_ver].push_back(second_ver);
     transposed_vertexes_[second_ver].push_back(first_ver);
   }
 
   void DFS(int ver) {
     colours_[ver] = GRAY;
-    for (int neighbour : vertexes_[ver]) {
+    for (int neighbour : adjacency_list_[ver]) {
       if (colours_[neighbour] == WHITE) {
         DFS(neighbour);
       }
@@ -41,7 +41,7 @@ class Graph {
   }
 
   void TopSort() {
-    for (int i = 0; i < static_cast<int>(vertexes_.size()); ++i) {
+    for (int i = 0; i < static_cast<int>(adjacency_list_.size()); ++i) {
       if (colours_[i] == WHITE) {
         DFS(i);
       }
