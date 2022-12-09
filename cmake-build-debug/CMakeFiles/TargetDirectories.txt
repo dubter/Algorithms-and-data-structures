@@ -75,6 +75,8 @@
 /home/rodion/CLionProjects/algorithms_and_data_structures/cmake-build-debug/CMakeFiles/FordFalkerson.dir
 /home/rodion/CLionProjects/algorithms_and_data_structures/cmake-build-debug/CMakeFiles/DSU.dir
 /home/rodion/CLionProjects/algorithms_and_data_structures/cmake-build-debug/CMakeFiles/MinDistanceWithLimits.dir
+/home/rodion/CLionProjects/algorithms_and_data_structures/cmake-build-debug/CMakeFiles/EdmondsCarp.dir
+/home/rodion/CLionProjects/algorithms_and_data_structures/cmake-build-debug/CMakeFiles/Dinic.dir
 /home/rodion/CLionProjects/algorithms_and_data_structures/cmake-build-debug/CMakeFiles/edit_cache.dir
 /home/rodion/CLionProjects/algorithms_and_data_structures/cmake-build-debug/CMakeFiles/rebuild_cache.dir
 /home/rodion/CLionProjects/algorithms_and_data_structures/cmake-build-debug/ClassesFromSTL/gcd/CMakeFiles/gcd_public_test.dir

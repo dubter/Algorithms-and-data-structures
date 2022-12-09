@@ -116,7 +116,9 @@
 						73,
 						74,
 						75,
-						76
+						76,
+						77,
+						78
 					]
 				},
 				{
@@ -131,7 +133,7 @@
 					"source" : "ClassesFromSTL/gcd",
 					"targetIndexes" : 
 					[
-						83
+						85
 					]
 				},
 				{
@@ -146,7 +148,7 @@
 					"source" : "ClassesFromSTL/sum",
 					"targetIndexes" : 
 					[
-						98
+						100
 					]
 				},
 				{
@@ -161,7 +163,7 @@
 					"source" : "ClassesFromSTL/any",
 					"targetIndexes" : 
 					[
-						77
+						79
 					]
 				},
 				{
@@ -176,7 +178,7 @@
 					"source" : "ClassesFromSTL/array",
 					"targetIndexes" : 
 					[
-						78
+						80
 					]
 				},
 				{
@@ -191,7 +193,7 @@
 					"source" : "ClassesFromSTL/big_integer",
 					"targetIndexes" : 
 					[
-						79
+						81
 					]
 				},
 				{
@@ -223,7 +225,7 @@
 					"source" : "ClassesFromSTL/calculator/tokenize",
 					"targetIndexes" : 
 					[
-						99
+						101
 					]
 				},
 				{
@@ -238,7 +240,7 @@
 					"source" : "ClassesFromSTL/calculator/polish_notation",
 					"targetIndexes" : 
 					[
-						89
+						91
 					]
 				},
 				{
@@ -253,7 +255,7 @@
 					"source" : "ClassesFromSTL/calculator/calculator",
 					"targetIndexes" : 
 					[
-						80
+						82
 					]
 				},
 				{
@@ -268,7 +270,7 @@
 					"source" : "ClassesFromSTL/frozen_set",
 					"targetIndexes" : 
 					[
-						82
+						84
 					]
 				},
 				{
@@ -283,7 +285,7 @@
 					"source" : "ClassesFromSTL/inserter",
 					"targetIndexes" : 
 					[
-						85
+						87
 					]
 				},
 				{
@@ -315,7 +317,7 @@
 					"source" : "ClassesFromSTL/itertools/enumerate",
 					"targetIndexes" : 
 					[
-						81
+						83
 					]
 				},
 				{
@@ -330,7 +332,7 @@
 					"source" : "ClassesFromSTL/itertools/range",
 					"targetIndexes" : 
 					[
-						91
+						93
 					]
 				},
 				{
@@ -345,7 +347,7 @@
 					"source" : "ClassesFromSTL/itertools/reversed",
 					"targetIndexes" : 
 					[
-						94
+						96
 					]
 				},
 				{
@@ -360,7 +362,7 @@
 					"source" : "ClassesFromSTL/matrix",
 					"targetIndexes" : 
 					[
-						86
+						88
 					]
 				},
 				{
@@ -375,7 +377,7 @@
 					"source" : "ClassesFromSTL/move_iterator",
 					"targetIndexes" : 
 					[
-						87
+						89
 					]
 				},
 				{
@@ -390,7 +392,7 @@
 					"source" : "ClassesFromSTL/optional",
 					"targetIndexes" : 
 					[
-						88
+						90
 					]
 				},
 				{
@@ -405,7 +407,7 @@
 					"source" : "ClassesFromSTL/random",
 					"targetIndexes" : 
 					[
-						90
+						92
 					]
 				},
 				{
@@ -420,7 +422,7 @@
 					"source" : "ClassesFromSTL/rational",
 					"targetIndexes" : 
 					[
-						92
+						94
 					]
 				},
 				{
@@ -435,7 +437,7 @@
 					"source" : "ClassesFromSTL/reverse_iterator",
 					"targetIndexes" : 
 					[
-						93
+						95
 					]
 				},
 				{
@@ -450,7 +452,7 @@
 					"source" : "ClassesFromSTL/shared_ptr",
 					"targetIndexes" : 
 					[
-						95
+						97
 					]
 				},
 				{
@@ -465,7 +467,7 @@
 					"source" : "ClassesFromSTL/string",
 					"targetIndexes" : 
 					[
-						96
+						98
 					]
 				},
 				{
@@ -480,7 +482,7 @@
 					"source" : "ClassesFromSTL/string_view",
 					"targetIndexes" : 
 					[
-						97
+						99
 					]
 				},
 				{
@@ -495,7 +497,7 @@
 					"source" : "ClassesFromSTL/unique_ptr",
 					"targetIndexes" : 
 					[
-						100
+						102
 					]
 				},
 				{
@@ -510,7 +512,7 @@
 					"source" : "ClassesFromSTL/unordered_set",
 					"targetIndexes" : 
 					[
-						101
+						103
 					]
 				},
 				{
@@ -525,7 +527,7 @@
 					"source" : "ClassesFromSTL/vector",
 					"targetIndexes" : 
 					[
-						102
+						104
 					]
 				},
 				{
@@ -540,7 +542,7 @@
 					"source" : "ClassesFromSTL/geometry",
 					"targetIndexes" : 
 					[
-						84
+						86
 					]
 				}
 			],
@@ -685,7 +687,9 @@
 						99,
 						100,
 						101,
-						102
+						102,
+						103,
+						104
 					]
 				}
 			],
@@ -857,6 +861,20 @@
 					"id" : "Dijkstra::@6890427a1f51a3e7e1df",
 					"jsonFile" : "target-Dijkstra-Debug-53601aea0bfd922b9c15.json",
 					"name" : "Dijkstra",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Dinic::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Dinic-Debug-c56071bc0cf3833f56ab.json",
+					"name" : "Dinic",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "EdmondsCarp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-EdmondsCarp-Debug-4a6dfc5724f694752dc7.json",
+					"name" : "EdmondsCarp",
 					"projectIndex" : 0
 				},
 				{

@@ -2504,6 +2504,70 @@ build MinDistanceWithLimits: CXX_EXECUTABLE_LINKER__MinDistanceWithLimits_Debug 
   TARGET_FILE = MinDistanceWithLimits
   TARGET_PDB = MinDistanceWithLimits.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target EdmondsCarp
+
+
+#############################################
+# Order-only phony target for EdmondsCarp
+
+build cmake_object_order_depends_target_EdmondsCarp: phony || CMakeFiles/EdmondsCarp.dir
+
+build CMakeFiles/EdmondsCarp.dir/Graphs/EdmondsCarp.cpp.o: CXX_COMPILER__EdmondsCarp_Debug /home/rodion/CLionProjects/algorithms_and_data_structures/Graphs/EdmondsCarp.cpp || cmake_object_order_depends_target_EdmondsCarp
+  DEP_FILE = CMakeFiles/EdmondsCarp.dir/Graphs/EdmondsCarp.cpp.o.d
+  FLAGS = -fsanitize=address,undefined -Wall -Wextra -pedantic -Werror -Wno-self-assign-overloaded -Wno-missing-braces -g -std=gnu++17
+  INCLUDES = -I/home/rodion/CLionProjects/algorithms_and_data_structures/.
+  OBJECT_DIR = CMakeFiles/EdmondsCarp.dir
+  OBJECT_FILE_DIR = CMakeFiles/EdmondsCarp.dir/Graphs
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target EdmondsCarp
+
+
+#############################################
+# Link the executable EdmondsCarp
+
+build EdmondsCarp: CXX_EXECUTABLE_LINKER__EdmondsCarp_Debug CMakeFiles/EdmondsCarp.dir/Graphs/EdmondsCarp.cpp.o
+  FLAGS = -fsanitize=address,undefined -Wall -Wextra -pedantic -Werror -Wno-self-assign-overloaded -Wno-missing-braces -g
+  OBJECT_DIR = CMakeFiles/EdmondsCarp.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = EdmondsCarp
+  TARGET_PDB = EdmondsCarp.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target Dinic
+
+
+#############################################
+# Order-only phony target for Dinic
+
+build cmake_object_order_depends_target_Dinic: phony || CMakeFiles/Dinic.dir
+
+build CMakeFiles/Dinic.dir/Graphs/Dinic.cpp.o: CXX_COMPILER__Dinic_Debug /home/rodion/CLionProjects/algorithms_and_data_structures/Graphs/Dinic.cpp || cmake_object_order_depends_target_Dinic
+  DEP_FILE = CMakeFiles/Dinic.dir/Graphs/Dinic.cpp.o.d
+  FLAGS = -fsanitize=address,undefined -Wall -Wextra -pedantic -Werror -Wno-self-assign-overloaded -Wno-missing-braces -g -std=gnu++17
+  INCLUDES = -I/home/rodion/CLionProjects/algorithms_and_data_structures/.
+  OBJECT_DIR = CMakeFiles/Dinic.dir
+  OBJECT_FILE_DIR = CMakeFiles/Dinic.dir/Graphs
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target Dinic
+
+
+#############################################
+# Link the executable Dinic
+
+build Dinic: CXX_EXECUTABLE_LINKER__Dinic_Debug CMakeFiles/Dinic.dir/Graphs/Dinic.cpp.o
+  FLAGS = -fsanitize=address,undefined -Wall -Wextra -pedantic -Werror -Wno-self-assign-overloaded -Wno-missing-braces -g
+  OBJECT_DIR = CMakeFiles/Dinic.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = Dinic
+  TARGET_PDB = Dinic.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -4330,7 +4394,7 @@ build ClassesFromSTL/geometry/rebuild_cache: phony ClassesFromSTL/geometry/CMake
 #############################################
 # Folder: /home/rodion/CLionProjects/algorithms_and_data_structures/cmake-build-debug
 
-build all: phony QuickSort MergeSort BubbleSort BubbleSortOptimized CountingSort HeapSort InsertSort QuickSortOptimized SelectionSort SelectionSortOptimized InplaceMergeSort BST Splay AVL Deque Stack LevenshteinDistance LCS LIS Fibonacci FastLIS BackPack QueueUsingTwoStacks Heap Comparator Animals Meeting AdjacencyList Dictionary Bank Frequency DataBase ExpensiveCalculator ArrayPrefixSums MaxSum SparseTable FenwickTree FenwickTree3D SegmentTree SegmentTreeWithUpdate SparseTable2D CorrectBracketSequence Treap PrefixFunction FromPrefixFuncToString ZFunction FromZFuncToString KMP NumberDifferentSubstrings Trie AhoCorasick SuffixAutomaton SuffixTree TwoSuffixTrees SuffixMachine BFS TwoToneGraph FindCycle BFSForWeightedGraphs NumberConnectivitiyComponents TopSort Kosaraju ArticulationPoints Bridges EulerPath SumWeightsEdgesOnline Prim Kruskal Boruvka BellmanFord Dijkstra NegativeCycle FLoydWarshall Johnson FordFalkerson DSU MinDistanceWithLimits ClassesFromSTL/gcd/all ClassesFromSTL/sum/all ClassesFromSTL/any/all ClassesFromSTL/array/all ClassesFromSTL/big_integer/all ClassesFromSTL/calculator/all ClassesFromSTL/frozen_set/all ClassesFromSTL/inserter/all ClassesFromSTL/itertools/all ClassesFromSTL/matrix/all ClassesFromSTL/move_iterator/all ClassesFromSTL/optional/all ClassesFromSTL/random/all ClassesFromSTL/rational/all ClassesFromSTL/reverse_iterator/all ClassesFromSTL/shared_ptr/all ClassesFromSTL/string/all ClassesFromSTL/string_view/all ClassesFromSTL/unique_ptr/all ClassesFromSTL/unordered_set/all ClassesFromSTL/vector/all ClassesFromSTL/geometry/all
+build all: phony QuickSort MergeSort BubbleSort BubbleSortOptimized CountingSort HeapSort InsertSort QuickSortOptimized SelectionSort SelectionSortOptimized InplaceMergeSort BST Splay AVL Deque Stack LevenshteinDistance LCS LIS Fibonacci FastLIS BackPack QueueUsingTwoStacks Heap Comparator Animals Meeting AdjacencyList Dictionary Bank Frequency DataBase ExpensiveCalculator ArrayPrefixSums MaxSum SparseTable FenwickTree FenwickTree3D SegmentTree SegmentTreeWithUpdate SparseTable2D CorrectBracketSequence Treap PrefixFunction FromPrefixFuncToString ZFunction FromZFuncToString KMP NumberDifferentSubstrings Trie AhoCorasick SuffixAutomaton SuffixTree TwoSuffixTrees SuffixMachine BFS TwoToneGraph FindCycle BFSForWeightedGraphs NumberConnectivitiyComponents TopSort Kosaraju ArticulationPoints Bridges EulerPath SumWeightsEdgesOnline Prim Kruskal Boruvka BellmanFord Dijkstra NegativeCycle FLoydWarshall Johnson FordFalkerson DSU MinDistanceWithLimits EdmondsCarp Dinic ClassesFromSTL/gcd/all ClassesFromSTL/sum/all ClassesFromSTL/any/all ClassesFromSTL/array/all ClassesFromSTL/big_integer/all ClassesFromSTL/calculator/all ClassesFromSTL/frozen_set/all ClassesFromSTL/inserter/all ClassesFromSTL/itertools/all ClassesFromSTL/matrix/all ClassesFromSTL/move_iterator/all ClassesFromSTL/optional/all ClassesFromSTL/random/all ClassesFromSTL/rational/all ClassesFromSTL/reverse_iterator/all ClassesFromSTL/shared_ptr/all ClassesFromSTL/string/all ClassesFromSTL/string_view/all ClassesFromSTL/unique_ptr/all ClassesFromSTL/unordered_set/all ClassesFromSTL/vector/all ClassesFromSTL/geometry/all
 
 # =============================================================================
 

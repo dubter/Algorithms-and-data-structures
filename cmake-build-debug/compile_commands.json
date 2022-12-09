@@ -386,6 +386,16 @@
 },
 {
   "directory": "/home/rodion/CLionProjects/algorithms_and_data_structures/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/rodion/CLionProjects/algorithms_and_data_structures/.  -fsanitize=address,undefined -Wall -Wextra -pedantic -Werror -Wno-self-assign-overloaded -Wno-missing-braces -g -std=gnu++17 -o CMakeFiles/EdmondsCarp.dir/Graphs/EdmondsCarp.cpp.o -c /home/rodion/CLionProjects/algorithms_and_data_structures/Graphs/EdmondsCarp.cpp",
+  "file": "/home/rodion/CLionProjects/algorithms_and_data_structures/Graphs/EdmondsCarp.cpp"
+},
+{
+  "directory": "/home/rodion/CLionProjects/algorithms_and_data_structures/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/rodion/CLionProjects/algorithms_and_data_structures/.  -fsanitize=address,undefined -Wall -Wextra -pedantic -Werror -Wno-self-assign-overloaded -Wno-missing-braces -g -std=gnu++17 -o CMakeFiles/Dinic.dir/Graphs/Dinic.cpp.o -c /home/rodion/CLionProjects/algorithms_and_data_structures/Graphs/Dinic.cpp",
+  "file": "/home/rodion/CLionProjects/algorithms_and_data_structures/Graphs/Dinic.cpp"
+},
+{
+  "directory": "/home/rodion/CLionProjects/algorithms_and_data_structures/cmake-build-debug",
   "command": "/usr/bin/c++ -I/home/rodion/CLionProjects/algorithms_and_data_structures/.  -fsanitize=address,undefined -Wall -Wextra -pedantic -Werror -Wno-self-assign-overloaded -Wno-missing-braces -g -std=gnu++17 -o ClassesFromSTL/gcd/CMakeFiles/gcd_public_test.dir/gcd_public_test.cpp.o -c /home/rodion/CLionProjects/algorithms_and_data_structures/ClassesFromSTL/gcd/gcd_public_test.cpp",
   "file": "/home/rodion/CLionProjects/algorithms_and_data_structures/ClassesFromSTL/gcd/gcd_public_test.cpp"
 },

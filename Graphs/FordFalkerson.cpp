@@ -16,6 +16,7 @@ class Edge {
  public:
   Edge(size_t from, size_t to, size_t flow, size_t bandwidth, size_t back_edge)
       : from_(from), to_(to), flow_(flow), bandwidth_(bandwidth), back_edge_(back_edge){};
+  Edge() = default;
   size_t from_;
   size_t to_;
   size_t flow_;
@@ -51,7 +52,7 @@ class Graph {
     return 0;
   }
 
-  size_t MaxFlow(size_t start, size_t finish) {
+  size_t FordFalkerson(size_t start, size_t finish) {
     size_t max_flow = 0;  // 0 шаг
     for (;;) {
       UpdateColours();
@@ -87,6 +88,6 @@ int main() {
     std::cin >> ver_from >> ver_to >> bandwidth;
     graph.InsertOrientEdge(--ver_from, --ver_to, bandwidth);
   }
-  std::cout << graph.MaxFlow(0, number_vertexes - 1);
+  std::cout << graph.FordFalkerson(0, number_vertexes - 1);
   return 0;
 }
