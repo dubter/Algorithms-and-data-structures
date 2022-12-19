@@ -112,3 +112,7 @@
 1188	1397	1669732922027631865	LevenshteinDistance	c8b3e80655597b57
 1	32033	1670279744150534300	ClassesFromSTL/unique_ptr/CMakeFiles/unique_ptr_public_test.dir/unique_ptr_public_test.cpp.o	7ef4af84b76f42af
 1	26610	1670279872416320080	ClassesFromSTL/rational/CMakeFiles/rational_public_test.dir/rational_public_test.cpp.o	f24b5c9be7480b5c
+0	1359	1671463033816403659	CMakeFiles/ArticulationPoints.dir/Graphs/ArticulationPoints.cpp.o	98a9989c8cefdb4e
+1359	1550	1671463034006404730	ArticulationPoints	2d1caed04583bb2c
+1	1034	1671463052169840794	CMakeFiles/ArticulationPoints.dir/Graphs/ArticulationPoints.cpp.o	98a9989c8cefdb4e
+1034	1168	1671463052303174883	ArticulationPoints	2d1caed04583bb2c

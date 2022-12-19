@@ -56,7 +56,7 @@ class Graph {
     size_t max_flow = 0;  // 0 шаг
     for (;;) {
       UpdateColours();
-      size_t flow = FindFlow(start, finish, max_flow_);  // 1 шаг
+      size_t flow = FindFlow(start, finish, max_value_);  // 1 шаг
       max_flow += flow;                                  // 2 шаг
       if (flow == 0) {                                   // 3 шаг
         return max_flow;
@@ -73,7 +73,7 @@ class Graph {
  private:
   std::vector<std::vector<Edge>> adjacency_list_;
   std::vector<COLOUR> colours_;
-  const size_t max_flow_ = 100000001;
+  const size_t max_value_ = 100000001;
 };
 
 int main() {

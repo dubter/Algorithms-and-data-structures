@@ -38,7 +38,9 @@ class Graph {
         time_up_[ver] = std::min(time_up_[ver], time_in_[u]);
       }
       if (colours_[u] == WHITE) {
-        ++amount_of_children;
+        if (is_root) {
+          ++amount_of_children;
+        }
         DFS(u, false, time, amount_of_children);
         time_up_[ver] = std::min(time_up_[ver], time_up_[u]);
         if (!is_root && time_in_[ver] <= time_up_[u]) {

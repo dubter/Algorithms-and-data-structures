@@ -30,7 +30,7 @@ class Graph {
   size_t FindFlow(size_t start, size_t finish) {
     UpdatePrevs();
     std::queue<std::pair<size_t, size_t>> queue;
-    queue.push(std::make_pair(start, max_flow_));
+    queue.push(std::make_pair(start, max_value_));
     prev_[start] = -2;
     size_t flow, cur_ver;
     size_t new_flow;
@@ -73,7 +73,7 @@ class Graph {
   }
 
  private:
-  const size_t max_flow_ = 1000000001;
+  const size_t max_value_ = 1000000001;
   std::vector<std::map<size_t, size_t>> adj_list_;
   std::vector<int> prev_;
 };

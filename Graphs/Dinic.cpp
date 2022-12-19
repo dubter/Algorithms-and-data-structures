@@ -23,7 +23,7 @@ class Edge {
 
 class Graph {
  public:
-  explicit Graph(int64_t size) : adj_list_(size, std::vector<Edge>(size)), dist_(size, max_flow_) {
+  explicit Graph(int64_t size) : adj_list_(size, std::vector<Edge>(size)), dist_(size, max_value_) {
   }
 
   void InsertOrientEdge(int64_t from, int64_t to, int64_t bandwidth) {
@@ -33,7 +33,7 @@ class Graph {
   }
   void UpdateDistance() {
     for (auto &elem : dist_) {
-      elem = max_flow_;
+      elem = max_value_;
     }
   }
 
@@ -47,13 +47,13 @@ class Graph {
       ver = queue.front();
       queue.pop();
       for (int64_t i = 0; i < static_cast<int64_t>(adj_list_.size()); ++i) {
-        if (dist_[i] == max_flow_ && adj_list_[ver][i].flow_ < adj_list_[ver][i].bandwidth_) {
+        if (dist_[i] == max_value_ && adj_list_[ver][i].flow_ < adj_list_[ver][i].bandwidth_) {
           queue.push(i);
           dist_[i] = dist_[ver] + 1;
         }
       }
     }
-    return dist_[finish] != max_flow_;
+    return dist_[finish] != max_value_;
   }
 
   int64_t FindFlow(int64_t ver, int64_t finish, int64_t cur_flow) {
@@ -85,7 +85,7 @@ class Graph {
         break;
       }
       for (;;) {
-        int64_t new_flow = FindFlow(start, finish, max_flow_);
+        int64_t new_flow = FindFlow(start, finish, max_value_);
         if (new_flow == 0) {
           break;
         }
@@ -96,7 +96,7 @@ class Graph {
   }
 
  private:
-  const int64_t max_flow_ = 5000000000001;
+  const int64_t max_value_ = 5000000000001;
   std::vector<std::vector<Edge>> adj_list_;
   std::vector<int64_t> dist_;
 };
