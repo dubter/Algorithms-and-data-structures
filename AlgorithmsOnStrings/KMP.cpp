@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 
-std::vector<int> PrefixFunc(std::string string) {
+std::vector<int> PrefixFunc(const std::string &string) {
   int tmp = 0;
   std::vector<int> prefix_arr(string.size(), 0);
   for (int i = 1; i < static_cast<int>(string.size()); i++) {

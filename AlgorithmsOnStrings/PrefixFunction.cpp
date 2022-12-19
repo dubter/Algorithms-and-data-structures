@@ -2,7 +2,7 @@
 #include <cstring>
 #include <vector>
 
-std::vector<size_t> PrefixFunc(std::string string) {
+std::vector<size_t> PrefixFunc(const std::string &string) {
   size_t tmp = 0;
   std::vector<size_t> prefix_arr(string.size(), 0);
   for (size_t i = 1; i < string.size(); i++) {
