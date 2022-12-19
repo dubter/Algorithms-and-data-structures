@@ -48,7 +48,7 @@ class Graph {
         time_up_[ver] = std::min(time_up_[ver], time_up_[u_ver]);
         if (time_in_[ver] < time_up_[u_ver]) {
           if (bridges_.find(u_index_of_edge) == bridges_.end()) {
-            if (std::count(vertexes_without_index_[ver].begin(), vertexes_without_index_[ver].end(), u_ver) == 1) {
+            if (std::count(vertexes_without_index_[ver].begin(), vertexes_without_index_[ver].end(), u_ver) == 1) {  // проверка на кратность ребра
               bridges_.emplace(u_index_of_edge);
             }
           }
