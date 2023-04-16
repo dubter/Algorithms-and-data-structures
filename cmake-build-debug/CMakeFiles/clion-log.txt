@@ -1,4 +1,0 @@
-/home/rodion/Downloads/clion-2022.2.3/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/home/rodion/Downloads/clion-2022.2.3/bin/ninja/linux/ninja -G Ninja -S /home/rodion/CLionProjects/algorithms_and_data_structures -B /home/rodion/CLionProjects/algorithms_and_data_structures/cmake-build-debug
--- Configuring done
--- Generating done
--- Build files have been written to: /home/rodion/CLionProjects/algorithms_and_data_structures/cmake-build-debug
